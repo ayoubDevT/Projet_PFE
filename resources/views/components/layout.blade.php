@@ -13,6 +13,8 @@ License: You must have a valid license purchased only from above link or https:/
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
+  <!-- Scripts -->
+  @vite(['resources/css/app.css', 'resources/js/app.js']) 
 	<!-- core:css -->
 	<link rel="stylesheet" href="assets/vendors/core/core.css">
 	<!-- endinject -->
@@ -27,6 +29,9 @@ License: You must have a valid license purchased only from above link or https:/
 	<link rel="stylesheet" id="csss" href="assets/css/demo_1/style.css">
   <!-- End layout styles -->
   <link rel="shortcut icon" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        
 </head>
 <body>
 	<div class="main-wrapper">
@@ -47,7 +52,7 @@ License: You must have a valid license purchased only from above link or https:/
         <ul class="nav">
           <li class="nav-item nav-category">Main</li>
           <li class="nav-item">
-            <a href="{{ route('dash') }}" class="nav-link">
+            <a href="{{ route('dashboard') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Dashboard</span>
             </a>
@@ -371,7 +376,7 @@ License: You must have a valid license purchased only from above link or https:/
 		<div class="page-wrapper">
 					
 			<!-- partial:partials/_navbar.html -->
-			<nav class="navbar">
+			<nav  class="navbar">
 				<a href="#" class="sidebar-toggler">
 					<i data-feather="menu"></i>
 				</a>
@@ -387,7 +392,7 @@ License: You must have a valid license purchased only from above link or https:/
 						</div>
 					</form>
 					<ul class="navbar-nav">
-						<li class="nav-item dropdown">
+						<!--<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="flag-icon flag-icon-us mt-1" title="us"></i> <span class="font-weight-medium ml-1 mr-1 d-none d-md-inline-block">English</span>
 							</a>
@@ -496,7 +501,7 @@ License: You must have a valid license purchased only from above link or https:/
 									<a href="javascript:;">View all</a>
 								</div>
 							</div>
-						</li>
+						</li>-->
 						<li class="nav-item dropdown nav-notifications">
 							<a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i data-feather="bell"></i>
@@ -561,7 +566,112 @@ License: You must have a valid license purchased only from above link or https:/
 								</div>
 							</div>
 						</li>
-						<li class="nav-item dropdown nav-profile">
+            <div class="hidden sm:flex sm:items-center sm:ml-6">
+              <!-- Teams Dropdown -->
+              @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                  <div class="ml-3 relative">
+                      <x-jet-dropdown align="right" width="60">
+                          <x-slot name="trigger">
+                              <span class="inline-flex rounded-md">
+                                  <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
+                                      {{ Auth::user()->currentTeam->name }}
+
+                                      <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                          <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                      </svg>
+                                  </button>
+                              </span>
+                          </x-slot>
+
+                          <x-slot name="content">
+                              <div class="w-60">
+                                  <!-- Team Management -->
+                                  <div class="block px-4 py-2 text-xs text-gray-400">
+                                      {{ __('Manage Team') }}
+                                  </div>
+
+                                  <!-- Team Settings -->
+                                  <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                      {{ __('Team Settings') }}
+                                  </x-jet-dropdown-link>
+
+                                  @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
+                                      <x-jet-dropdown-link href="{{ route('teams.create') }}">
+                                          {{ __('Create New Team') }}
+                                      </x-jet-dropdown-link>
+                                  @endcan
+
+                                  <div class="border-t border-gray-100"></div>
+
+                                  <!-- Team Switcher -->
+                                  <div class="block px-4 py-2 text-xs text-gray-400">
+                                      {{ __('Switch Teams') }}
+                                  </div>
+
+                                  @foreach (Auth::user()->allTeams() as $team)
+                                      <x-jet-switchable-team :team="$team" />
+                                  @endforeach
+                              </div>
+                          </x-slot>
+                      </x-jet-dropdown>
+                  </div>
+              @endif
+
+              <!-- Settings Dropdown -->
+              <li class="nav-item dropdown nav-profile">
+              <div class="ml-3 relative">
+                  <x-jet-dropdown align="right" width="48">
+                      <x-slot name="trigger">
+                          @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                              <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                  <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                              </button>
+                          @else
+                              <span class="inline-flex rounded-md">
+                                  <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                      {{ Auth::user()->name }}
+
+                                      <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                      </svg>
+                                  </button>
+                              </span>
+                          @endif
+                      </x-slot>
+
+                      <x-slot name="content">
+                          <!-- Account Management -->
+                          <div class="block px-4 py-2 text-xs text-gray-400">
+                              {{ __('Manage Account') }}
+                          </div>
+
+                          <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                              {{ __('Profile') }}
+                          </x-jet-dropdown-link>
+
+                          @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                              <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                                  {{ __('API Tokens') }}
+                              </x-jet-dropdown-link>
+                          @endif
+
+                          <div class="border-t border-gray-100"></div>
+
+                          <!-- Authentication -->
+                          <form method="POST" action="{{ route('logout') }}" x-data>
+                              @csrf
+
+                              <x-jet-dropdown-link href="{{ route('logout') }}"
+                                       @click.prevent="$root.submit();">
+                                  {{ __('Log Out') }}
+                              </x-jet-dropdown-link>
+                          </form>
+                      </x-slot>
+                  </x-jet-dropdown>
+              </div></li>
+          </div>
+
+						<!--<li class="nav-item dropdown nav-profile">
 							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<img src="https://via.placeholder.com/30x30" alt="profile">
 							</a>
@@ -604,7 +714,7 @@ License: You must have a valid license purchased only from above link or https:/
 									</ul>
 								</div>
 							</div>
-						</li>
+						</li>-->
 					</ul>
 				</div>
 			</nav>
@@ -639,6 +749,15 @@ License: You must have a valid license purchased only from above link or https:/
   <script src="assets/js/datepicker.js"></script>
   <script src="../../../assets/js/chat.js"></script>
 	<!-- end custom js for this page -->
+  <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+  <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>  
+  <script>
+    CKEDITOR.replace( 'editor' , {
+      filebrowserUploadUrl:"{{ route('ck.upload', ['_token'=>csrf_token()]) }}",
+      filebrowserUploadMethod:"form"
+    });
+    
+</script>
   <script>
     var id = document.getElementById("csss");
     

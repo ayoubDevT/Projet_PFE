@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,20 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    
+    Route::get('/', function () { return view('admin.dashboard-one'); })->name('dashboard');
+    Route::get('/chat', function () { return view('admin.pages.apps.chat'); })->name('chat');
+    Route::post('ck/upload', [App\Http\Controllers\ckupload::class, 'ckupload'])->name('ck.upload');
+    Route::post('ck/page', [App\Http\Controllers\PageController::class, 'store'])->name('page.store');
 });
 
 
-Route::get('/dash', function () { return view('admin.dashboard-one'); })->name('dash');
-Route::get('/chat', function () { return view('admin.pages.apps.chat'); })->name('chat');
