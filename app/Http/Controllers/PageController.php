@@ -13,6 +13,6 @@ class PageController extends Controller
             'body' =>'required'
         ]);
         Page::create($att);
-        return view('admin.dashboard-one');
+        return back();
     }
 }

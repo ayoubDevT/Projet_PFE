@@ -12,11 +12,11 @@ class ckupload extends Controller
         $file = $request->upload;
         $fileName = $file->getClientOriginalName();
         $newName = time().$fileName;
-        $dir = "storage/files/";
+        $dir = "images/files/";
         $file->move($dir, $newName);
-        $url = asset('storage/files/'.$newName);
+        $url = asset('images/files/'.$newName);
         $ckedit = $request->input('CKEditorFuncNum');
-        $status = "<script>window.parent.CKEDITOR.tools.callFunction('$ckedit', '$url', 'file secc')</script>";
+        $status = "<script>window.parent.CKEDITOR.tools.callFunction('$ckedit', '$url')</script>";
         echo $status;
     }
 }

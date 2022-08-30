@@ -8,39 +8,47 @@ Purchase: https://1.envato.market/nobleui_admin
 License: You must have a valid license purchased only from above link or https://themeforest.net/user/nobleui/portfolio/ in order to legally use the theme for your project.
 -->
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
   <!-- Scripts -->
-  @vite(['resources/css/app.css', 'resources/js/app.js']) 
-	<!-- core:css -->
-	<link rel="stylesheet" href="assets/vendors/core/core.css">
-	<!-- endinject -->
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <!-- core:css -->
+  <link rel="stylesheet" href="assets/vendors/core/core.css">
+  <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
-	<!-- end plugin css for this page -->
-	<!-- inject:css -->
-	<link rel="stylesheet" href="assets/fonts/feather-font/css/iconfont.css">
-	<link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
-	<!-- endinject -->
-  <!-- Layout styles -->  
-	<link rel="stylesheet" id="csss" href="assets/css/demo_1/style.css">
+  <link rel="stylesheet" href="assets/vendors/owl.carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/vendors/owl.carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="assets/vendors/animate.css/animate.min.css">
+  <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="assets/vendors/dropify/dist/dropify.min.css">
+  <link rel="stylesheet" href="assets/vendors/sweetalert2/sweetalert2.min.css">
+  <link rel="stylesheet" href="assets/vendors/prismjs/themes/prism.css">
+  <!-- end plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="assets/fonts/feather-font/css/iconfont.css">
+  <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" id="csss" href="assets/css/demo_1/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="assets/images/favicon.png" />
+  <link rel="icon" href="assets/images/favicon-32x32.jpg" />
   <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+  <link rel="stylesheet" id="csss" href="assets/css/css.css">
 
-        
 </head>
-<body>
-	<div class="main-wrapper">
 
-		<!-- partial:partials/_sidebar.html -->
-		<nav class="sidebar">
+<body>
+  <div class="main-wrapper">
+
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar">
       <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-          Noble<span>UI</span>
+          <img src=" assets/images/logo-atlas-outdoor.png " alt="logo-atlas-outdoor" style="width: 70%">
         </a>
         <div class="sidebar-toggler not-active">
           <span></span>
@@ -50,48 +58,67 @@ License: You must have a valid license purchased only from above link or https:/
       </div>
       <div class="sidebar-body">
         <ul class="nav">
-          <li class="nav-item nav-category">Main</li>
+          <li class="nav-item nav-category">Pages</li>
           <li class="nav-item">
-            <a href="{{ route('dashboard') }}" class="nav-link">
+            <a href="{{ route('home') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Dashboard</span>
+              <span class="link-title">Home</span>
             </a>
           </li>
-          <li class="nav-item nav-category">web apps</li>
+
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
-              <i class="link-icon" data-feather="mail"></i>
-              <span class="link-title">Email</span>
-              <i class="link-arrow" data-feather="chevron-down"></i>
-            </a>
-            <div class="collapse" id="emails">
-              <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="pages/email/inbox.html" class="nav-link">Inbox</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/email/read.html" class="nav-link">Read</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/email/compose.html" class="nav-link">Compose</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('chat') }}" class="nav-link">
-              <i class="link-icon" data-feather="message-square"></i>
-              <span class="link-title">Chat</span>
+            <a href="" class="nav-link">
+              <i class="link-icon" data-feather="layout"></i>
+              <span class="link-title">Cultural Encounters</span>
             </a>
           </li>
           <li class="nav-item">
             <a href="pages/apps/calendar.html" class="nav-link">
-              <i class="link-icon" data-feather="calendar"></i>
-              <span class="link-title">Calendar</span>
+              <i class="link-icon" data-feather="layout"></i>
+              <span class="link-title">Treks & Adventures</span>
             </a>
           </li>
-          <li class="nav-item nav-category">Components</li>
+
           <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="link-icon" data-feather="layout"></i>
+              <span class="link-title">Luxury & MICE</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/apps/calendar.html" class="nav-link">
+              <i class="link-icon" data-feather="layout"></i>
+              <span class="link-title">Wellness</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="link-icon" data-feather="layout"></i>
+              <span class="link-title">Our social projects</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/apps/calendar.html" class="nav-link">
+              <i class="link-icon" data-feather="layout"></i>
+              <span class="link-title">More</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="link-icon" data-feather="layout"></i>
+              <span class="link-title">About us</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/apps/calendar.html" class="nav-link">
+              <i class="link-icon" data-feather="layout"></i>
+              <span class="link-title">Contact us</span>
+            </a>
+          </li>
+
+          <!--<li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
               <i class="link-icon" data-feather="feather"></i>
               <span class="link-title">UI Kit</span>
@@ -344,7 +371,7 @@ License: You must have a valid license purchased only from above link or https:/
               <i class="link-icon" data-feather="hash"></i>
               <span class="link-title">Documentation</span>
             </a>
-          </li>
+          </li>-->
         </ul>
       </div>
     </nav>
@@ -357,42 +384,44 @@ License: You must have a valid license purchased only from above link or https:/
         <div class="form-group border-bottom">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarLight" value="sidebar-light" onclick="light()" checked>
+              <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarLight"
+                value="sidebar-light" onclick="light()" checked>
               Light
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarDark" value="sidebar-dark" onclick="dark()">
+              <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarDark"
+                value="sidebar-dark" onclick="dark()">
               Dark
             </label>
           </div>
         </div>
-       
+
       </div>
     </nav>
-		<!-- partial -->
-	
-		<div class="page-wrapper">
-					
-			<!-- partial:partials/_navbar.html -->
-			<nav  class="navbar">
-				<a href="#" class="sidebar-toggler">
-					<i data-feather="menu"></i>
-				</a>
-				<div class="navbar-content">
-					<form class="search-form">
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<div class="input-group-text">
-									<i data-feather="search"></i>
-								</div>
-							</div>
-							<input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
-						</div>
-					</form>
-					<ul class="navbar-nav">
-						<!--<li class="nav-item dropdown">
+    <!-- partial -->
+
+    <div class="page-wrapper">
+
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar">
+        <a href="#" class="sidebar-toggler">
+          <i data-feather="menu"></i>
+        </a>
+        <div class="navbar-content">
+          <form class="search-form">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i data-feather="search"></i>
+                </div>
+              </div>
+              <input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
+            </div>
+          </form>
+          <ul class="navbar-nav">
+            <!--<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="flag-icon flag-icon-us mt-1" title="us"></i> <span class="font-weight-medium ml-1 mr-1 d-none d-md-inline-block">English</span>
 							</a>
@@ -502,176 +531,187 @@ License: You must have a valid license purchased only from above link or https:/
 								</div>
 							</div>
 						</li>-->
-						<li class="nav-item dropdown nav-notifications">
-							<a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i data-feather="bell"></i>
-								<div class="indicator">
-									<div class="circle"></div>
-								</div>
-							</a>
-							<div class="dropdown-menu" aria-labelledby="notificationDropdown">
-								<div class="dropdown-header d-flex align-items-center justify-content-between">
-									<p class="mb-0 font-weight-medium">6 New Notifications</p>
-									<a href="javascript:;" class="text-muted">Clear all</a>
-								</div>
-								<div class="dropdown-body">
-									<a href="javascript:;" class="dropdown-item">
-										<div class="icon">
-											<i data-feather="user-plus"></i>
-										</div>
-										<div class="content">
-											<p>New customer registered</p>
-											<p class="sub-text text-muted">2 sec ago</p>
-										</div>
-									</a>
-									<a href="javascript:;" class="dropdown-item">
-										<div class="icon">
-											<i data-feather="gift"></i>
-										</div>
-										<div class="content">
-											<p>New Order Recieved</p>
-											<p class="sub-text text-muted">30 min ago</p>
-										</div>
-									</a>
-									<a href="javascript:;" class="dropdown-item">
-										<div class="icon">
-											<i data-feather="alert-circle"></i>
-										</div>
-										<div class="content">
-											<p>Server Limit Reached!</p>
-											<p class="sub-text text-muted">1 hrs ago</p>
-										</div>
-									</a>
-									<a href="javascript:;" class="dropdown-item">
-										<div class="icon">
-											<i data-feather="layers"></i>
-										</div>
-										<div class="content">
-											<p>Apps are ready for update</p>
-											<p class="sub-text text-muted">5 hrs ago</p>
-										</div>
-									</a>
-									<a href="javascript:;" class="dropdown-item">
-										<div class="icon">
-											<i data-feather="download"></i>
-										</div>
-										<div class="content">
-											<p>Download completed</p>
-											<p class="sub-text text-muted">6 hrs ago</p>
-										</div>
-									</a>
-								</div>
-								<div class="dropdown-footer d-flex align-items-center justify-content-center">
-									<a href="javascript:;">View all</a>
-								</div>
-							</div>
-						</li>
+            <li class="nav-item dropdown nav-notifications">
+              <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i data-feather="bell"></i>
+                <div class="indicator">
+                  <div class="circle"></div>
+                </div>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="notificationDropdown">
+                <div class="dropdown-header d-flex align-items-center justify-content-between">
+                  <p class="mb-0 font-weight-medium">6 New Notifications</p>
+                  <a href="javascript:;" class="text-muted">Clear all</a>
+                </div>
+                <div class="dropdown-body">
+                  <a href="javascript:;" class="dropdown-item">
+                    <div class="icon">
+                      <i data-feather="user-plus"></i>
+                    </div>
+                    <div class="content">
+                      <p>New customer registered</p>
+                      <p class="sub-text text-muted">2 sec ago</p>
+                    </div>
+                  </a>
+                  <a href="javascript:;" class="dropdown-item">
+                    <div class="icon">
+                      <i data-feather="gift"></i>
+                    </div>
+                    <div class="content">
+                      <p>New Order Recieved</p>
+                      <p class="sub-text text-muted">30 min ago</p>
+                    </div>
+                  </a>
+                  <a href="javascript:;" class="dropdown-item">
+                    <div class="icon">
+                      <i data-feather="alert-circle"></i>
+                    </div>
+                    <div class="content">
+                      <p>Server Limit Reached!</p>
+                      <p class="sub-text text-muted">1 hrs ago</p>
+                    </div>
+                  </a>
+                  <a href="javascript:;" class="dropdown-item">
+                    <div class="icon">
+                      <i data-feather="layers"></i>
+                    </div>
+                    <div class="content">
+                      <p>Apps are ready for update</p>
+                      <p class="sub-text text-muted">5 hrs ago</p>
+                    </div>
+                  </a>
+                  <a href="javascript:;" class="dropdown-item">
+                    <div class="icon">
+                      <i data-feather="download"></i>
+                    </div>
+                    <div class="content">
+                      <p>Download completed</p>
+                      <p class="sub-text text-muted">6 hrs ago</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="dropdown-footer d-flex align-items-center justify-content-center">
+                  <a href="javascript:;">View all</a>
+                </div>
+              </div>
+            </li>
             <div class="hidden sm:flex sm:items-center sm:ml-6">
               <!-- Teams Dropdown -->
               @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                  <div class="ml-3 relative">
-                      <x-jet-dropdown align="right" width="60">
-                          <x-slot name="trigger">
-                              <span class="inline-flex rounded-md">
-                                  <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
-                                      {{ Auth::user()->currentTeam->name }}
+              <div class="ml-3 relative">
+                <x-jet-dropdown align="right" width="60">
+                  <x-slot name="trigger">
+                    <span class="inline-flex rounded-md">
+                      <button type="button"
+                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
+                        {{ Auth::user()->currentTeam->name }}
 
-                                      <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                          <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                      </svg>
-                                  </button>
-                              </span>
-                          </x-slot>
+                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </button>
+                    </span>
+                  </x-slot>
 
-                          <x-slot name="content">
-                              <div class="w-60">
-                                  <!-- Team Management -->
-                                  <div class="block px-4 py-2 text-xs text-gray-400">
-                                      {{ __('Manage Team') }}
-                                  </div>
+                  <x-slot name="content">
+                    <div class="w-60">
+                      <!-- Team Management -->
+                      <div class="block px-4 py-2 text-xs text-gray-400">
+                        {{ __('Manage Team') }}
+                      </div>
 
-                                  <!-- Team Settings -->
-                                  <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
-                                      {{ __('Team Settings') }}
-                                  </x-jet-dropdown-link>
+                      <!-- Team Settings -->
+                      <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                        {{ __('Team Settings') }}
+                      </x-jet-dropdown-link>
 
-                                  @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                      <x-jet-dropdown-link href="{{ route('teams.create') }}">
-                                          {{ __('Create New Team') }}
-                                      </x-jet-dropdown-link>
-                                  @endcan
+                      @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
+                      <x-jet-dropdown-link href="{{ route('teams.create') }}">
+                        {{ __('Create New Team') }}
+                      </x-jet-dropdown-link>
+                      @endcan
 
-                                  <div class="border-t border-gray-100"></div>
+                      <div class="border-t border-gray-100"></div>
 
-                                  <!-- Team Switcher -->
-                                  <div class="block px-4 py-2 text-xs text-gray-400">
-                                      {{ __('Switch Teams') }}
-                                  </div>
+                      <!-- Team Switcher -->
+                      <div class="block px-4 py-2 text-xs text-gray-400">
+                        {{ __('Switch Teams') }}
+                      </div>
 
-                                  @foreach (Auth::user()->allTeams() as $team)
-                                      <x-jet-switchable-team :team="$team" />
-                                  @endforeach
-                              </div>
-                          </x-slot>
-                      </x-jet-dropdown>
-                  </div>
+                      @foreach (Auth::user()->allTeams() as $team)
+                      <x-jet-switchable-team :team="$team" />
+                      @endforeach
+                    </div>
+                  </x-slot>
+                </x-jet-dropdown>
+              </div>
               @endif
 
               <!-- Settings Dropdown -->
               <li class="nav-item dropdown nav-profile">
-              <div class="ml-3 relative">
+                <div class="ml-3 relative">
                   <x-jet-dropdown align="right" width="48">
-                      <x-slot name="trigger">
-                          @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                              <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                  <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                              </button>
-                          @else
-                              <span class="inline-flex rounded-md">
-                                  <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
-                                      {{ Auth::user()->name }}
+                    <x-slot name="trigger">
+                      @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                      <button
+                        class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                        <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
+                          alt="{{ Auth::user()->name }}" />
+                      </button>
+                      @else
+                      <span class="inline-flex rounded-md">
+                        <button type="button"
+                          class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                          {{ Auth::user()->name }}
 
-                                      <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                      </svg>
-                                  </button>
-                              </span>
-                          @endif
-                      </x-slot>
+                          <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                              clip-rule="evenodd" />
+                          </svg>
+                        </button>
+                      </span>
+                      @endif
+                    </x-slot>
 
-                      <x-slot name="content">
-                          <!-- Account Management -->
-                          <div class="block px-4 py-2 text-xs text-gray-400">
-                              {{ __('Manage Account') }}
-                          </div>
+                    <x-slot name="content">
+                      <!-- Account Management -->
+                      <div class="block px-4 py-2 text-xs text-gray-400">
+                        {{ __('Manage Account') }}
+                      </div>
 
-                          <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                              {{ __('Profile') }}
-                          </x-jet-dropdown-link>
+                      <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                        {{ __('Profile') }}
+                      </x-jet-dropdown-link>
 
-                          @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                              <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
-                                  {{ __('API Tokens') }}
-                              </x-jet-dropdown-link>
-                          @endif
+                      @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                      <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                        {{ __('API Tokens') }}
+                      </x-jet-dropdown-link>
+                      @endif
 
-                          <div class="border-t border-gray-100"></div>
+                      <div class="border-t border-gray-100"></div>
 
-                          <!-- Authentication -->
-                          <form method="POST" action="{{ route('logout') }}" x-data>
-                              @csrf
+                      <!-- Authentication -->
+                      <form method="POST" action="{{ route('logout') }}" x-data>
+                        @csrf
 
-                              <x-jet-dropdown-link href="{{ route('logout') }}"
-                                       @click.prevent="$root.submit();">
-                                  {{ __('Log Out') }}
-                              </x-jet-dropdown-link>
-                          </form>
-                      </x-slot>
+                        <x-jet-dropdown-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                          {{ __('Log Out') }}
+                        </x-jet-dropdown-link>
+                      </form>
+                    </x-slot>
                   </x-jet-dropdown>
-              </div></li>
-          </div>
+                </div>
+              </li>
+            </div>
 
-						<!--<li class="nav-item dropdown nav-profile">
+            <!--<li class="nav-item dropdown nav-profile">
 							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<img src="https://via.placeholder.com/30x30" alt="profile">
 							</a>
@@ -715,49 +755,59 @@ License: You must have a valid license purchased only from above link or https:/
 								</div>
 							</div>
 						</li>-->
-					</ul>
-				</div>
-			</nav>
-			<!-- partial -->
-            {{ $slot }}
-            <!-- partial:partials/_footer.html -->
-			<footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
-				<p class="text-muted text-center text-md-left">Copyright © 2021 <a href="https://www.nobleui.com" target="_blank">NobleUI</a>. All rights reserved</p>
-				<p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small" data-feather="heart"></i></p>
-			</footer>
-			<!-- partial -->
-		
-		</div>
-	</div>
-    <!-- core:js -->
-	<script src="assets/vendors/core/core.js"></script>
-	<!-- endinject -->
+          </ul>
+        </div>
+      </nav>
+      <!-- partial -->
+      {{ $slot }}
+      <!-- partial:partials/_footer.html -->
+      <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <p class="text-muted text-center text-md-left">Copyright © 2022 <a href="https://www.atlas-outdoor.com/"
+            target="_blank">Atlas Outdoor</a>. All rights reserved</p>
+        <p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Designed by <a
+            href="https://www.itlabspro.com/" target="_blank">IT LABS PRO</a></p>
+      </footer>
+      <!-- partial -->
+
+    </div>
+  </div>
+  <!-- core:js -->
+  <script src="assets/vendors/core/core.js"></script>
+  <!-- endinject -->
   <!-- plugin js for this page -->
-  <script src="assets/vendors/chartjs/Chart.min.js"></script>
+
   <script src="assets/vendors/jquery.flot/jquery.flot.js"></script>
   <script src="assets/vendors/jquery.flot/jquery.flot.resize.js"></script>
-  <script src="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="assets/vendors/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="assets/vendors/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
-	<!-- end plugin js for this page -->
-	<!-- inject:js -->
-	<script src="assets/vendors/feather-icons/feather.min.js"></script>
-	<script src="assets/js/template.js"></script>
-	<!-- endinject -->
+  <script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="assets/vendors/dropify/dist/dropify.min.js"></script>
+  <script src="assets/vendors/sweetalert2/sweetalert2.min.js"></script>
+  <script src="assets/vendors/prismjs/prism.js"></script>
+	<script src="assets/vendors/clipboard/clipboard.min.js"></script>
+  <!-- end plugin js for this page -->
+  <!-- inject:js -->
+  <script src="assets/vendors/feather-icons/feather.min.js"></script>
+  <script src="assets/js/template.js"></script>
+  <!-- endinject -->
   <!-- custom js for this page -->
-  <script src="assets/js/dashboard.js"></script>
-  <script src="assets/js/datepicker.js"></script>
-  <script src="../../../assets/js/chat.js"></script>
-	<!-- end custom js for this page -->
+  <script src="assets/js/sweet-alert.js"></script>
+  <script src="assets/js/dropify.js"></script>
+  <script src="assets/js/carousel.js"></script>
+  <script src="assets/js/data-table.js"></script>
+  <!-- end custom js for this page -->
   <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-  <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>  
+  <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>
   <script>
     CKEDITOR.replace( 'editor' , {
       filebrowserUploadUrl:"{{ route('ck.upload', ['_token'=>csrf_token()]) }}",
       filebrowserUploadMethod:"form"
     });
     
-</script>
+  </script>
   <script>
     var id = document.getElementById("csss");
     
@@ -770,5 +820,17 @@ License: You must have a valid license purchased only from above link or https:/
         id.href = "assets/css/demo_1/style.css"; 
       }
   </script>
+  <script>
+    $('#varyingModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var recipient = button.data('whatever') // Extract info from data-* attributes
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      var modal = $(this)
+      modal.find('.modal-title').text('New message to ' + recipient)
+      modal.find('.modal-body input').val(recipient)
+    })
+  </script>
 </body>
-</html>    
+
+</html>

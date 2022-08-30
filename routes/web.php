@@ -22,8 +22,15 @@ Route::middleware([
     'verified'
 ])->group(function () {
     
-    Route::get('/', function () { return view('admin.dashboard-one'); })->name('dashboard');
-    Route::get('/chat', function () { return view('admin.pages.apps.chat'); })->name('chat');
+    Route::get('/', function () { return view('admin.dashboard-one'); })->name('dash');
+    
+    //slider
+    Route::get('/home', [App\Http\Controllers\ImageController::class, 'index'])->name('home');
+    Route::post('/store', [App\Http\Controllers\ImageController::class, 'store'])->name('image.store');
+    Route::get('/delete', [App\Http\Controllers\ImageController::class, 'delete'])->name('image.delete');
+    Route::get('/update', [App\Http\Controllers\ImageController::class, 'update'])->name('image.update');
+
+    //page ckeditor
     Route::post('ck/upload', [App\Http\Controllers\ckupload::class, 'ckupload'])->name('ck.upload');
     Route::post('ck/page', [App\Http\Controllers\PageController::class, 'store'])->name('page.store');
 });
