@@ -27,6 +27,7 @@ License: You must have a valid license purchased only from above link or https:/
   <link rel="stylesheet" href="assets/vendors/dropify/dist/dropify.min.css">
   <link rel="stylesheet" href="assets/vendors/sweetalert2/sweetalert2.min.css">
   <link rel="stylesheet" href="assets/vendors/prismjs/themes/prism.css">
+  <script src="assets/vendors/dropify/dist/dropify.min.js"></script>
   <!-- end plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="assets/fonts/feather-font/css/iconfont.css">
