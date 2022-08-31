@@ -23,20 +23,20 @@
                         <h6 class="card-title">Modifier votre slider</h6>
 
                         <div class="owl-carousel owl-theme owl-mouse-wheel">
-                            @foreach ($imgs as $img)
+                            @foreach ($imgs as $image)
                            
                             <div class="content item">
-                                <div class="content-overlay"></div> <img src="{{asset('storage/' . $img->path) }}" alt="item-image" class="content-image">
+                                <div class="content-overlay"></div> <img src="{{asset('storage/' . $image->path) }}" alt="item-image" class="content-image">
                                 <div class="content-details fadeIn-bottom">
-                                    <a class="btn btn-danger btn-icon-text mb-2  mt-2" href="{{ route('image.delete', ['id'=>$img->id]) }}" >delete</a>
-                                    <a class="btn btn-primary btn-icon-text mb-2  mt-2" href="/update/{{ $img->id }}" >update</a>
+                                    <a class="btn btn-danger btn-icon-text mb-2  mt-2" href="{{ route('image.delete', ['id'=>$image->id]) }}" >delete</a>
+                                    <a class="btn btn-primary btn-icon-text mb-2  mt-2" href="/update/{{ $image->id }}" >update</a>
                                     
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{ $img->id }}">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ $image->id }}">
                                           update
                                         </button>
                                         <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal-{{ $img->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="exampleModal{{ $image->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                               <div class="modal-header">

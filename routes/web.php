@@ -25,10 +25,11 @@ Route::middleware([
     Route::get('/', function () { return view('admin.dashboard-one'); })->name('dash');
     
     //slider
-    Route::get('/home', [App\Http\Controllers\ImageController::class, 'index'])->name('home');
-    Route::post('/store', [App\Http\Controllers\ImageController::class, 'store'])->name('image.store');
-    Route::get('/delete', [App\Http\Controllers\ImageController::class, 'delete'])->name('image.delete');
-    Route::get('/update', [App\Http\Controllers\ImageController::class, 'update'])->name('image.update');
+    Route::get('home', [App\Http\Controllers\ImageController::class, 'index'])->name('home');
+    Route::post('store', [App\Http\Controllers\ImageController::class, 'store'])->name('image.store');
+    Route::get('delete', [App\Http\Controllers\ImageController::class, 'delete'])->name('image.delete');
+    //Route::get('update/{image:id}', [App\Http\Controllers\ImageController::class, 'update'])->name('image.update');
+    Route::get('update', [App\Http\Controllers\ImageController::class, 'update'])->name('image.update');
 
     //page ckeditor
     Route::post('ck/upload', [App\Http\Controllers\ckupload::class, 'ckupload'])->name('ck.upload');

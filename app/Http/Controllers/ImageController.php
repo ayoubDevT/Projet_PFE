@@ -15,30 +15,30 @@ class ImageController extends Controller
 
     public function store(Request $request)
     {
-        
+
         $att = $request->validate([
-            'path' =>'required|image'
+            'path' => 'required|image'
         ]);
         $att['path'] = request()->file('path')->store('slider');
 
         Image::create($att);
         return back();
     }
-    
-    public function update(Image $image)
+
+    public function update($id)
     {
-        
-        
+        $image = Image::find($id);
+        return view('admin.pages.editImage', ['image' => $image]);
     }
 
     public function delete()
     {
         $image = Image::find(request()->id);
-        $imagePath = 'storage/'. $image->path;
+        $imagePath = 'storage/' . $image->path;
         if (file_exists($imagePath)) {
             @unlink($imagePath);
         }
-        $image->delete();        
+        $image->delete();
         return back();
     }
 }
