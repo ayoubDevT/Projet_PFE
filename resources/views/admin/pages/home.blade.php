@@ -82,7 +82,7 @@
                                   <td>
                                     <div class="form-check">
                                       <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" onchange="window.location=" name="optionsRadios" id="optionsRadios" value="option1">
+                                        <input type="radio" class="form-check-input" onchange="window.location= " name="optionsRadios" id="optionsRadios" value="option1">
                                         Show
                                       </label>
                                     </div>
