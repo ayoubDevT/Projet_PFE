@@ -30,13 +30,13 @@
                   class="content-image">
                 <div class="content-details fadeIn-bottom">
                   <a class="btn btn-danger btn-icon-text mb-2  mt-2"
-                    href="{{ route('image.delete', ['id'=>$image->id]) }}">delete</a>
+                    href="{{ route('image.delete', ['id'=>$image->id]) }}">Supprimer</a>
 
 
                   <!-- Button trigger modal -->
                   <button type="button" class="btn btn-primary btn-icon-text mb-2  mt-2" data-toggle="modal"
                     data-target="#exampleModal{{ $image->id }}">
-                    update
+                    Modifier
                   </button>
 
                 </div>
@@ -49,6 +49,60 @@
         </div>
       </div>
     </div>
+
+    <div class="row mt-5">
+      <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+              <div class="card-body">
+                  <h6 class="card-title">choisir les trips d'accueil</h6>
+
+                  <div class="table-responsive">
+                      <table id="dataTableExample" class="table">
+                          <thead>
+                              <tr>
+                                  <th>Id</th>
+                                  <th>Titre</th>
+                                  <th>Thumbnail</th>
+                                  <th>Jours</th>
+                                  <th>Min Age</th>
+                                  <th>Mois</th>
+                                  <th>Show Accueil</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              @foreach ($trips as $trip)
+
+                              <tr>
+                                  <td>{{ $trip->id }}</td>
+                                  <td>{{ $trip->title }}</td>
+                                  <td><img src="{{asset('storage/' . $trip->thumbnail) }}" alt="trip_image"></td>
+                                  <td>{{ $trip->days }}</td>
+                                  <td>{{ $trip->min_age }}</td>
+                                  <td>{{ $trip->months }}</td>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" onchange="window.location=" name="optionsRadios" id="optionsRadios" value="option1">
+                                        Show
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input checked type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
+                                        Hide
+                                      </label>
+                                    </div>
+                                  </td>
+                              </tr>
+                              @endforeach
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
     @foreach ($imgs as $image)
     <!-- Modal -->
     <div class="modal fade" id="exampleModal{{ $image->id }}" tabindex="-1" role="dialog"
@@ -69,8 +123,8 @@
             <input name="path" type="file" id="myDropify" class="border" />
 
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" name="sub" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+              <button type="submit" name="sub" class="btn btn-primary">Modifier</button>
 
             </div>
           </form>
