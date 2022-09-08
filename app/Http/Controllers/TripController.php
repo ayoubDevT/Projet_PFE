@@ -93,5 +93,24 @@ class TripController extends Controller
         $trip->delete();
         return back();
     }
+
+    public function show($id)
+    {
+
+       
+        $trip = Trip::find($id);
+        $trip->show = 1;
+        $trip->update();
+        return back();
+    }
+
+    public function hide($id)
+    {
+
+        $trip = Trip::find($id);
+        $trip->show = 0;
+        $trip->update();
+        return back();
+    }
     
 }

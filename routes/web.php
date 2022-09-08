@@ -37,6 +37,9 @@ Route::middleware([
     Route::get('delete_trip', [App\Http\Controllers\TripController::class, 'delete'])->name('trips.delete');
     Route::get('update_trip/{id}', [App\Http\Controllers\TripController::class, 'update'])->name('trips.update');
     Route::put('edit_trip/{id}', [App\Http\Controllers\TripController::class, 'edit'])->name('trips.edit');
+    Route::get('show/{id}', [App\Http\Controllers\TripController::class, 'show'])->name('trips.show');
+    Route::get('hide/{id}', [App\Http\Controllers\TripController::class, 'hide'])->name('trips.hide');
+
     
     //page ckeditor
     Route::post('ck/upload', [App\Http\Controllers\ckupload::class, 'ckupload'])->name('ck.upload');

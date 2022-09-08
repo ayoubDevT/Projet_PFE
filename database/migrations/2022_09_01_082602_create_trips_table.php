@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->string('title');
+            $table->integer('show');
             $table->string('thumbnail')->nullable();
             $table->text('overview');
             $table->string('days');

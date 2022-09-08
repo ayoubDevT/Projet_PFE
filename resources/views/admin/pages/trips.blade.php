@@ -9,7 +9,11 @@
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputText1">Titre</label>
-                                <input value="{{ old('title') }}" type="text" class="form-control" id="exampleInputText1" name="title">
+                                <input value="{{ old('title') }}" type="text" class="form-control"
+                                    id="exampleInputText1" name="title">
+                                @error('title')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Categorie</label>
@@ -25,26 +29,40 @@
                                 <label for="exampleFormControlTextarea1">Description</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" name="overview"
                                     rows="5">{{ old('overview') }}</textarea>
+                                @error('overview')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputText1">Jours</label>
-                                <input value="{{ old('days') }}" type="text" class="form-control" id="exampleInputText1" name="days"
-                                    placeholder="Number Days">
+                                <input value="{{ old('days') }}" type="text" class="form-control" id="exampleInputText1"
+                                    name="days" placeholder="Number Days">
+                                @error('days')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputText1">Min Age</label>
-                                <input value="{{ old('min_age') }}" type="text" class="form-control" id="exampleInputText1" name="min_age"
-                                    placeholder="Number Years+">
+                                <input value="{{ old('min_age') }}" type="text" class="form-control"
+                                    id="exampleInputText1" name="min_age" placeholder="Number Years+">
+                                @error('min_age')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="tags">Les Mois</label>
                                 <input name="months" id="tags"
                                     value="January, February, March, April, May, June, July, August, September, October, November, December" />
+                                @error('mounths')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="myDropify">Thumbnail</label>
                                 <input name="thumbnail" type="file" id="myDropify" class="border" />
-
+                                @error('thumbnail')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
                             </div>
                             <input name="sub" type="submit" value="Ajouter"
                                 class="btn btn-primary btn-icon-text mb-2  mt-2">
@@ -101,7 +119,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Modal -->
         <!--<div class="modal fade" id="exampleModal{{ $trip->id }}" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -172,6 +190,6 @@
                 </div>
             </div>
         </div>-->
-        
+
     </div>
 </x-layout>
