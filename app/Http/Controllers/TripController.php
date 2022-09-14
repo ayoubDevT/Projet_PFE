@@ -14,7 +14,7 @@ class TripController extends Controller
     {
         $trips = Trip::all();
         $categories = Category::all();
-        return view('admin.pages.trips', ['trips' => $trips, 'categories' => $categories]);
+        return view('admin.trips.trips', ['trips' => $trips, 'categories' => $categories]);
     }
 
     
@@ -45,7 +45,7 @@ class TripController extends Controller
         $trip = Trip::find($id);
         $trips = Trip::all();
         $categories = Category::all();
-        return view('admin.pages.editTrip', ['trip' => $trip , 'categories' => $categories, 'trips' => $trips]);
+        return view('admin.trips.editTrip', ['trip' => $trip , 'categories' => $categories, 'trips' => $trips]);
     }
 
     public function edit(Request $request, $id)
@@ -79,7 +79,7 @@ class TripController extends Controller
 
         $trip->update($att);
 
-        return view('admin.pages.trips',['trips' => $trips , 'categories' => $categories]);
+        return view('admin.trips.trips',['trips' => $trips , 'categories' => $categories]);
     }
     
     public function delete()

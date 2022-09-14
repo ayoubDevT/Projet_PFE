@@ -96,7 +96,7 @@ License: You must have a valid license purchased only from above link or https:/
           </li>
 
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ route('osp') }}" class="nav-link">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Our social projects</span>
             </a>
@@ -115,7 +115,7 @@ License: You must have a valid license purchased only from above link or https:/
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/apps/calendar.html" class="nav-link">
+            <a href="{{ route('contact') }}" class="nav-link">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Contact us</span>
             </a>

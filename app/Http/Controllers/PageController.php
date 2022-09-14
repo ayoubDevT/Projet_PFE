@@ -10,7 +10,8 @@ class PageController extends Controller
     public function store(Request $request)
     {
         $att = $request->validate([
-            'body' =>'required'
+            'body' =>'required',
+            'name' =>'required'
         ]);
         Page::create($att);
         return back();

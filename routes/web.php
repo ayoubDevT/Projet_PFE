@@ -24,13 +24,22 @@ Route::middleware([
     
     Route::get('/', function () { return view('admin.dashboard-one'); })->name('dash');
     
-    //slider
+    //home
     Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('store_image', [App\Http\Controllers\ImageController::class, 'store'])->name('image.store');
     Route::get('delete_image', [App\Http\Controllers\ImageController::class, 'delete'])->name('image.delete');
     Route::put('edit_image', [App\Http\Controllers\ImageController::class, 'edit'])->name('image.edit');
     //Route::get('update/{image:id}', [App\Http\Controllers\ImageController::class, 'update'])->name('image.update');
-    
+
+    //osp
+    Route::get('osp', function () { return view('admin.pages.OSP.OSP'); })->name('osp');
+
+    //contact
+    Route::get('contact', [App\Http\Controllers\ImageController::class, 'contact'])->name('contact');
+    Route::post('store_contactimg', [App\Http\Controllers\ImageController::class, 'store'])->name('contactimg.store');
+    Route::get('delete_contactimg', [App\Http\Controllers\ImageController::class, 'delete'])->name('contactimg.delete');
+    Route::put('edit_contactimg', [App\Http\Controllers\ImageController::class, 'edit'])->name('contactimg.edit');
+
     //trips
     Route::get('trips', [App\Http\Controllers\TripController::class, 'index'])->name('trips.index');
     Route::post('store_trip', [App\Http\Controllers\TripController::class, 'store'])->name('trips.store');

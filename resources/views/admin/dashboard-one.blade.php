@@ -18,7 +18,7 @@
               </form>
               </div>
               <div>
-                {!! App\Models\Page::latest()->first()->body !!}
+                {!! App\Models\Page::latest()->first()->body ?? 'no code' !!}
               </div>
 
             </div>

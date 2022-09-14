@@ -10,8 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $imgs = Image::all();
+        $imgs = Image::where('page','home')->get();
         $trips = Trip::all();
-        return view('admin.pages.home', ['imgs' => $imgs, 'trips' => $trips]);
+        return view('admin.pages.home.home', ['imgs' => $imgs, 'trips' => $trips]);
     }
 }
