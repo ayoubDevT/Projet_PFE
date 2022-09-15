@@ -68,46 +68,119 @@ License: You must have a valid license purchased only from above link or https:/
               <span class="link-title">Home</span>
             </a>
           </li>
-
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a class="nav-link" data-toggle="collapse" href="#cultural" role="button" aria-expanded="false" aria-controls="cultural">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Cultural Encounters</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
             </a>
+            <div class="collapse" id="cultural">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="" class="nav-link">Inbox</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/read.html" class="nav-link">Read</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/compose.html" class="nav-link">Compose</a>
+                </li>
+              </ul>
+            </div>
           </li>
+          
           <li class="nav-item">
-            <a href="pages/apps/calendar.html" class="nav-link">
+            <a class="nav-link" data-toggle="collapse" href="#Treks" role="button" aria-expanded="false" aria-controls="Treks">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Treks & Adventures</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
             </a>
+            <div class="collapse" id="Treks">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="" class="nav-link">Inbox</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/read.html" class="nav-link">Read</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/compose.html" class="nav-link">Compose</a>
+                </li>
+              </ul>
+            </div>
           </li>
-
+          
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a class="nav-link" data-toggle="collapse" href="#Luxury" role="button" aria-expanded="false" aria-controls="Luxury">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Luxury & MICE</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
             </a>
+            <div class="collapse" id="Luxury">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="" class="nav-link">Inbox</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/read.html" class="nav-link">Read</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/compose.html" class="nav-link">Compose</a>
+                </li>
+              </ul>
+            </div>
           </li>
+          
           <li class="nav-item">
-            <a href="pages/apps/calendar.html" class="nav-link">
+            <a class="nav-link" data-toggle="collapse" href="#Wellness" role="button" aria-expanded="false" aria-controls="Wellness">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Wellness</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
             </a>
+            <div class="collapse" id="Wellness">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="" class="nav-link">Inbox</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/read.html" class="nav-link">Read</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/compose.html" class="nav-link">Compose</a>
+                </li>
+              </ul>
+            </div>
           </li>
-
           <li class="nav-item">
             <a href="{{ route('osp') }}" class="nav-link">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Our social projects</span>
             </a>
           </li>
+          
           <li class="nav-item">
-            <a href="pages/apps/calendar.html" class="nav-link">
+            <a class="nav-link" data-toggle="collapse" href="#More" role="button" aria-expanded="false" aria-controls="More">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">More</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
             </a>
+            <div class="collapse" id="More">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="" class="nav-link">Prepare your travel to morocco</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/read.html" class="nav-link">General advices</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/compose.html" class="nav-link">Faqs</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/compose.html" class="nav-link">Videos</a>
+                </li>
+              </ul>
+            </div>
           </li>
-
           <li class="nav-item">
             <a href="" class="nav-link">
               <i class="link-icon" data-feather="layout"></i>
@@ -120,7 +193,7 @@ License: You must have a valid license purchased only from above link or https:/
               <span class="link-title">Contact us</span>
             </a>
           </li>
-          <li class="nav-item nav-category">Trips</li>
+          <li class="nav-item nav-category">CRUD</li>
           <li class="nav-item">
             <a href="{{ route('trips.index') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>

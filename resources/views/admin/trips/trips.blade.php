@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputText1">Jours</label>
-                                <input value="{{ old('days') }}" type="text" class="form-control" id="exampleInputText1"
+                                <input value="{{ old('days') }}" type="number" class="form-control" id="exampleInputText1"
                                     name="days" placeholder="Number Days">
                                 @error('days')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputText1">Min Age</label>
-                                <input value="{{ old('min_age') }}" type="text" class="form-control"
+                                <input value="{{ old('min_age') }}" type="number" class="form-control"
                                     id="exampleInputText1" name="min_age" placeholder="Number Years+">
                                 @error('min_age')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>

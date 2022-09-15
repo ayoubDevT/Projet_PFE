@@ -20,8 +20,8 @@ return new class extends Migration
             $table->integer('show');
             $table->string('thumbnail')->nullable();
             $table->text('overview');
-            $table->string('days');
-            $table->string('min_age');
+            $table->integer('days');
+            $table->integer('min_age');
             $table->string('months');
             $table->timestamps();
         });

@@ -27,14 +27,14 @@ class TripController extends Controller
             'title' => 'required',
             'thumbnail' => 'required|image',
             'overview' => 'required',
-            'days' => 'required',
-            'min_age' => 'required',
+            'days' => 'required|numeric',
+            'min_age' => 'required|numeric|min:1|max:99',
             'months' => 'required'
            
         ]);
         
         $att['thumbnail'] = request()->file('thumbnail')->store('trips');
-      
+        $att['show'] = 0;
 
         Trip::create($att);
         return back();
@@ -58,8 +58,8 @@ class TripController extends Controller
             'title' => 'required',
             'thumbnail' => 'image',
             'overview' => 'required',
-            'days' => 'required',
-            'min_age' => 'required',
+            'days' => 'required|numeric',
+            'min_age' => 'required|numeric|min:1|max:99',
             'months' => 'required'
            
         ]);

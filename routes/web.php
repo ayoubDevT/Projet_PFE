@@ -14,7 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+    //site de client
+    Route::get('/', function () { return view('client.index'); })->name('client.home');
+    Route::get('/about', function () { return view('client.about'); })->name('client.about');
+    Route::get('/contact', function () { return view('client.contact'); })->name('client.contact');
+    Route::get('/faqs', function () { return view('client.faqs'); })->name('client.faqs');
+    Route::get('/general_advices', function () { return view('client.general_advices'); })->name('client.general_a');
+    Route::get('/our_social_projects', function () { return view('client.our_social_projects'); })->name('client.osp');
+    Route::get('/prepare_your_travel_to_morocco', function () { return view('client.prepare_your_travel_to_morocco'); })->name('client.prepareTravel');
+    Route::get('/videos', function () { return view('client.videos'); })->name('client.videos');
 
 Route::middleware([
     'auth:sanctum',
@@ -22,10 +30,8 @@ Route::middleware([
     'verified'
 ])->group(function () {
     
-    Route::get('/', function () { return view('admin.dashboard-one'); })->name('dash');
-    
     //home
-    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('store_image', [App\Http\Controllers\ImageController::class, 'store'])->name('image.store');
     Route::get('delete_image', [App\Http\Controllers\ImageController::class, 'delete'])->name('image.delete');
     Route::put('edit_image', [App\Http\Controllers\ImageController::class, 'edit'])->name('image.edit');
@@ -35,7 +41,7 @@ Route::middleware([
     Route::get('osp', function () { return view('admin.pages.OSP.OSP'); })->name('osp');
 
     //contact
-    Route::get('contact', [App\Http\Controllers\ImageController::class, 'contact'])->name('contact');
+    Route::get('adminContact', [App\Http\Controllers\ImageController::class, 'contact'])->name('contact');
     Route::post('store_contactimg', [App\Http\Controllers\ImageController::class, 'store'])->name('contactimg.store');
     Route::get('delete_contactimg', [App\Http\Controllers\ImageController::class, 'delete'])->name('contactimg.delete');
     Route::put('edit_contactimg', [App\Http\Controllers\ImageController::class, 'edit'])->name('contactimg.edit');
