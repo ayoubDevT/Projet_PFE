@@ -12,7 +12,7 @@ class TripController extends Controller
 {
     public function index()
     {
-        $trips = Trip::all();
+        $trips = Trip::with('category')->get();
         $categories = Category::all();
         return view('admin.trips.trips', ['trips' => $trips, 'categories' => $categories]);
     }

@@ -1,18 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Image;
-use App\Models\Trip;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ContactController extends Controller
 {
     public function index()
     {
-        $imgs = Image::where('page','home')->get();
-        $trips = Trip::all();
-        return view('admin.pages.home.home', ['imgs' => $imgs, 'trips' => $trips]);
+        $imgs = Image::where('page','contact')->get();
+        return view('admin.pages.contact.adminContact', ['imgs' => $imgs]);
     }
     public function store(Request $request)
     {
@@ -25,12 +22,6 @@ class HomeController extends Controller
 
         Image::create($att);
         return back();
-    }
-
-    public function update($id)
-    {
-        $image = Image::find($id);
-        return view('admin.pages.editImage', ['image' => $image]);
     }
 
     public function edit(Request $request)

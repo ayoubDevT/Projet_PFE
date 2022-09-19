@@ -167,22 +167,22 @@ License: You must have a valid license purchased only from above link or https:/
             <div class="collapse" id="More">
               <ul class="nav sub-menu">
                 <li class="nav-item">
-                  <a href="" class="nav-link">Prepare your travel to morocco</a>
+                  <a href="{{ route('ptm') }}" class="nav-link">Prepare your travel to morocco</a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/email/read.html" class="nav-link">General advices</a>
+                  <a href="{{ route('general_advices') }}" class="nav-link">General advices</a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/email/compose.html" class="nav-link">Faqs</a>
+                  <a href="{{ route('faqs') }}" class="nav-link">Faqs</a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/email/compose.html" class="nav-link">Videos</a>
+                  <a href="{{ route('videos') }}" class="nav-link">Videos</a>
                 </li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ route('about') }}" class="nav-link">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">About us</span>
             </a>

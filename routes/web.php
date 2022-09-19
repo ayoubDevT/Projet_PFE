@@ -32,19 +32,37 @@ Route::middleware([
     
     //home
     Route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::post('store_image', [App\Http\Controllers\ImageController::class, 'store'])->name('image.store');
-    Route::get('delete_image', [App\Http\Controllers\ImageController::class, 'delete'])->name('image.delete');
-    Route::put('edit_image', [App\Http\Controllers\ImageController::class, 'edit'])->name('image.edit');
+    Route::post('store_homeimg', [App\Http\Controllers\HomeController::class, 'store'])->name('homeimg.store');
+    Route::get('delete_homeimg', [App\Http\Controllers\HomeController::class, 'delete'])->name('homeimg.delete');
+    Route::put('edit_homeimg', [App\Http\Controllers\HomeController::class, 'edit'])->name('homeimg.edit');
     //Route::get('update/{image:id}', [App\Http\Controllers\ImageController::class, 'update'])->name('image.update');
 
+    //image
+    Route::post('store_image', [App\Http\Controllers\ImageController::class, 'store'])->name('image.store');
+    Route::get('delete_image', [App\Http\Controllers\ImageController::class, 'delete'])->name('image.delete');
+
     //osp
-    Route::get('osp', function () { return view('admin.pages.OSP.OSP'); })->name('osp');
+    Route::get('adminOsp', [App\Http\Controllers\ImageController::class, 'osp'])->name('osp');
+    
+
+    //more
+    Route::get('adminPtm', [App\Http\Controllers\ImageController::class, 'ptm'])->name('ptm');
+    Route::get('adminFaqs', [App\Http\Controllers\ImageController::class, 'faqs'])->name('faqs');
+    Route::get('adminVideos', [App\Http\Controllers\ImageController::class, 'videos'])->name('videos');
+    Route::get('adminGeneral_advices', [App\Http\Controllers\ImageController::class, 'general_advices'])->name('general_advices');
+
 
     //contact
-    Route::get('adminContact', [App\Http\Controllers\ImageController::class, 'contact'])->name('contact');
-    Route::post('store_contactimg', [App\Http\Controllers\ImageController::class, 'store'])->name('contactimg.store');
-    Route::get('delete_contactimg', [App\Http\Controllers\ImageController::class, 'delete'])->name('contactimg.delete');
-    Route::put('edit_contactimg', [App\Http\Controllers\ImageController::class, 'edit'])->name('contactimg.edit');
+    Route::get('adminContact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+    Route::post('store_contactimg', [App\Http\Controllers\ContactController::class, 'store'])->name('contactimg.store');
+    Route::get('delete_contactimg', [App\Http\Controllers\ContactController::class, 'delete'])->name('contactimg.delete');
+    Route::put('edit_contactimg', [App\Http\Controllers\ContactController::class, 'edit'])->name('contactimg.edit');
+
+    //about
+    Route::get('adminAbout', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
+    Route::post('store_aboutimg', [App\Http\Controllers\AboutController::class, 'store'])->name('aboutimg.store');
+    Route::get('delete_aboutimg', [App\Http\Controllers\AboutController::class, 'delete'])->name('aboutimg.delete');
+    Route::put('edit_aboutimg', [App\Http\Controllers\AboutController::class, 'edit'])->name('aboutimg.edit');
 
     //trips
     Route::get('trips', [App\Http\Controllers\TripController::class, 'index'])->name('trips.index');

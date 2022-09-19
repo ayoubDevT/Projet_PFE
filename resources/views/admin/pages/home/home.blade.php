@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-body">
             <h6 class="card-title">Ajouter une image a votre slider</h6>
-            <form action="{{ route('image.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('homeimg.store') }}" method="post" enctype="multipart/form-data">
               @csrf
               <input name="path" type="file" id="myDropify" class="border" />
               @error('path')
@@ -34,7 +34,7 @@
                   class="content-image">
                 <div class="content-details fadeIn-bottom">
                   <a class="btn btn-danger btn-icon-text mb-2  mt-2"
-                    href="{{ route('image.delete', ['id'=>$image->id]) }}">Supprimer</a>
+                    href="{{ route('homeimg.delete', ['id'=>$image->id]) }}">Supprimer</a>
 
 
                   <!-- Button trigger modal -->
@@ -124,7 +124,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="{{ route('image.edit', ['id'=>$image->id]) }}" method="post" enctype="multipart/form-data">
+          <form action="{{ route('homeimg.edit', ['id'=>$image->id]) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 

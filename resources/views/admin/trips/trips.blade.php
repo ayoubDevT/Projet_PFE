@@ -84,8 +84,8 @@
                             <table id="dataTableExample" class="table">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
                                         <th>Titre</th>
+                                        <th>Category</th>
                                         <th>Thumbnail</th>
                                         <th>Jours</th>
                                         <th>Min Age</th>
@@ -97,8 +97,8 @@
                                     @foreach ($trips as $trip)
 
                                     <tr>
-                                        <td>{{ $trip->id }}</td>
                                         <td>{{ $trip->title }}</td>
+                                        <td>{{ $trip->category->name }}</td>
                                         <td><img src="{{asset('storage/' . $trip->thumbnail) }}" alt="trip_image"></td>
                                         <td>{{ $trip->days }}</td>
                                         <td>{{ $trip->min_age }}</td>
