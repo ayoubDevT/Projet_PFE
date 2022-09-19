@@ -17,9 +17,9 @@
                             </div>
                             <div class="form-group">
                                 <label>Categorie</label>
-                                <select class="js-example-basic-single w-100" name="category_id" data-width="100%">
-                                    @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <select class="js-example-basic-single w-100" name="sub_category_id" data-width="100%">
+                                    @foreach ($sub_categories as $sub_category)
+                                    <option value="{{ $sub_category->id }}">{{ $sub_category->name }}</option>
                                     @endforeach
 
 
@@ -98,7 +98,7 @@
 
                                     <tr>
                                         <td>{{ $trip->title }}</td>
-                                        <td>{{ $trip->category->name }}</td>
+                                        <td>{{ $trip->sub_category->name }}</td>
                                         <td><img src="{{asset('storage/' . $trip->thumbnail) }}" alt="trip_image"></td>
                                         <td>{{ $trip->days }}</td>
                                         <td>{{ $trip->min_age }}</td>
@@ -121,7 +121,7 @@
         </div>
 
         <!-- Modal -->
-        <!--<div class="modal fade" id="exampleModal{{ $trip->id }}" tabindex="-1" role="dialog"
+        <!--<div class="modal fade" id="exampleModal{{-- $trip->id --}}" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -137,16 +137,16 @@
                         @method('PUT')
                         <div class="form-group">
                             <label for="exampleInputText1">Title</label>
-                            <input value="{{ $trip->title }}" type="text" class="form-control" id="exampleInputText1"
+                            <input value="{{-- $trip->title --}}" type="text" class="form-control" id="exampleInputText1"
                                 name="title">
                         </div>
                         <div class="form-group">
                             <label>Category</label>
-                            <select class="js-example-basic-single w-100" name="category_id" data-width="100%">
-                                @foreach ($categories as $category)
+                            <select class="js-example-basic-single w-100" name="sub_category_id" data-width="100%">
+                                @foreach ($sub_categories as $sub_category)
 
-                                <option value="{{ $category->id }}" {{ $select=($trip->category_id == $category->id) ?
-                                    'selected' : '' }}>{{ $category->name }}</option>
+                                <option value="{{-- $sub_category->id --}}" {{-- $select=($trip->sub_category_id == $sub_category->id) ?
+                                    'selected' : '' --}}>{{-- $sub_category->name --}}</option>
                                 @endforeach
 
 
@@ -154,27 +154,27 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Description</label>
-                            <textarea value="{{ $trip->overview }}" class="form-control"
+                            <textarea value="{{-- $trip->overview --}}" class="form-control"
                                 id="exampleFormControlTextarea1" name="overview" rows="5"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputText1">Days</label>
-                            <input value="{{ $trip->days }}" type="text" class="form-control" id="exampleInputText1"
+                            <input value="{{-- $trip->days --}}" type="text" class="form-control" id="exampleInputText1"
                                 name="days" placeholder="Number Days">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputText1">Min Age</label>
-                            <input value="{{ $trip->min_age }}" type="text" class="form-control" id="exampleInputText1"
+                            <input value="{{-- $trip->min_age --}}" type="text" class="form-control" id="exampleInputText1"
                                 name="min_age" placeholder="Number Years+">
                         </div>
                         <div class="form-group">
                             <label for="tags">Months</label>
-                            <input value="{{ $trip->months }}" name="months" id="tags"
+                            <input value="{{-- $trip->months --}}" name="months" id="tags"
                                 value="January, February, March, April, May, June, July, August, September, October, November, December" />
                         </div>
                         <div class="form-group">
                             <label for="myDropify">Thumbnail</label>
-                            <input value="{{ $trip->thumbnail }}" name="thumbnail" type="file" id="myDropify"
+                            <input value="{{-- $trip->thumbnail --}}" name="thumbnail" type="file" id="myDropify"
                                 class="border" />
 
                         </div>

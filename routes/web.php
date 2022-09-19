@@ -73,6 +73,11 @@ Route::middleware([
     Route::get('show/{id}', [App\Http\Controllers\TripController::class, 'show'])->name('trips.show');
     Route::get('hide/{id}', [App\Http\Controllers\TripController::class, 'hide'])->name('trips.hide');
 
+    //category
+    Route::get('category', [App\Http\Controllers\SubCategoryController::class, 'index'])->name('category.index');
+    Route::post('store_category', [App\Http\Controllers\SubCategoryController::class, 'store'])->name('category.store');
+    Route::get('delete_category', [App\Http\Controllers\SubCategoryController::class, 'delete'])->name('category.delete');
+    
     
     //page ckeditor
     Route::post('ck/upload', [App\Http\Controllers\ckupload::class, 'ckupload'])->name('ck.upload');

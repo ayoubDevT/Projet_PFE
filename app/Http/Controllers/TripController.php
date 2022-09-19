@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\SubCategory;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,9 @@ class TripController extends Controller
 {
     public function index()
     {
-        $trips = Trip::with('category')->get();
-        $categories = Category::all();
-        return view('admin.trips.trips', ['trips' => $trips, 'categories' => $categories]);
+        $trips = Trip::with('sub_category')->get();
+        $sub_categories = SubCategory::all();
+        return view('admin.trips.trips', ['trips' => $trips, 'sub_categories' => $sub_categories]);
     }
 
     
@@ -23,7 +24,7 @@ class TripController extends Controller
        
        
         $att = $request->validate([
-            'category_id' => 'required',
+            'sub_category_id' => 'required',
             'title' => 'required',
             'thumbnail' => 'required|image',
             'overview' => 'required',
@@ -44,17 +45,17 @@ class TripController extends Controller
     {
         $trip = Trip::find($id);
         $trips = Trip::all();
-        $categories = Category::all();
-        return view('admin.trips.editTrip', ['trip' => $trip , 'categories' => $categories, 'trips' => $trips]);
+        $sub_categories = SubCategory::all();
+        return view('admin.trips.editTrip', ['trip' => $trip , 'sub_categories' => $sub_categories, 'trips' => $trips]);
     }
 
     public function edit(Request $request, $id)
     {
         $trip = Trip::find($id);
         $trips = Trip::all();
-        $categories = Category::all();
+        $sub_categories = SubCategory::all();
         $att = $request->validate([
-            'category_id' => 'required',
+            'sub_category_id' => 'required',
             'title' => 'required',
             'thumbnail' => 'image',
             'overview' => 'required',
@@ -79,7 +80,7 @@ class TripController extends Controller
 
         $trip->update($att);
 
-        return view('admin.trips.trips',['trips' => $trips , 'categories' => $categories]);
+        return redirect(route('trips.index'));
     }
     
     public function delete()

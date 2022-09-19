@@ -76,15 +76,15 @@ License: You must have a valid license purchased only from above link or https:/
             </a>
             <div class="collapse" id="cultural">
               <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="" class="nav-link">Inbox</a>
+                @foreach ($categoriesPage as $categoryPage)
+                @if ($categoryPage->category->name == 'cultural encounters')
+                  <li class="nav-item">
+                  <a href="" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
                 </li>
-                <li class="nav-item">
-                  <a href="pages/email/read.html" class="nav-link">Read</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/email/compose.html" class="nav-link">Compose</a>
-                </li>
+                @endif
+                  
+                @endforeach
+                
               </ul>
             </div>
           </li>
@@ -97,15 +97,14 @@ License: You must have a valid license purchased only from above link or https:/
             </a>
             <div class="collapse" id="Treks">
               <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="" class="nav-link">Inbox</a>
+                @foreach ($categoriesPage as $categoryPage)
+                @if ($categoryPage->category->name == 'treks & adventures')
+                  <li class="nav-item">
+                  <a href="" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
                 </li>
-                <li class="nav-item">
-                  <a href="pages/email/read.html" class="nav-link">Read</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/email/compose.html" class="nav-link">Compose</a>
-                </li>
+                @endif
+                  
+                @endforeach
               </ul>
             </div>
           </li>
@@ -118,15 +117,14 @@ License: You must have a valid license purchased only from above link or https:/
             </a>
             <div class="collapse" id="Luxury">
               <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="" class="nav-link">Inbox</a>
+                @foreach ($categoriesPage as $categoryPage)
+                @if ($categoryPage->category->name == 'luxury & mice')
+                  <li class="nav-item">
+                  <a href="" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
                 </li>
-                <li class="nav-item">
-                  <a href="pages/email/read.html" class="nav-link">Read</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/email/compose.html" class="nav-link">Compose</a>
-                </li>
+                @endif
+                  
+                @endforeach
               </ul>
             </div>
           </li>
@@ -139,15 +137,14 @@ License: You must have a valid license purchased only from above link or https:/
             </a>
             <div class="collapse" id="Wellness">
               <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="" class="nav-link">Inbox</a>
+                @foreach ($categoriesPage as $categoryPage)
+                @if ($categoryPage->category->name == 'wellness')
+                  <li class="nav-item ">
+                  <a href="" class="nav-link mw-100 text-lowercase">{{ $categoryPage->name }}</a>
                 </li>
-                <li class="nav-item">
-                  <a href="pages/email/read.html" class="nav-link">Read</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/email/compose.html" class="nav-link">Compose</a>
-                </li>
+                @endif
+                  
+                @endforeach
               </ul>
             </div>
           </li>
@@ -198,6 +195,12 @@ License: You must have a valid license purchased only from above link or https:/
             <a href="{{ route('trips.index') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Trips CRUD</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('category.index') }}" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Categories CRUD</span>
             </a>
           </li>
         </ul>

@@ -13,16 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('trips', function (Blueprint $table) {
+        Schema::create('sub_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sub_category_id')->onDelete('cascade');
-            $table->string('title');
-            $table->integer('show');
-            $table->string('thumbnail')->nullable();
-            $table->text('overview');
-            $table->integer('days');
-            $table->integer('min_age');
-            $table->string('months');
+            $table->foreignId('category_id')->onDelete('cascade');
+            $table->string('name');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trips');
+        Schema::dropIfExists('sub_categories');
     }
 };

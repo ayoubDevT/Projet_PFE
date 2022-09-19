@@ -21,12 +21,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Categorie</label>
-                                <select class="js-example-basic-single w-100" name="category_id" data-width="100%">
-                                    @foreach ($categories as $category)
+                                <select class="js-example-basic-single w-100" name="sub_category_id" data-width="100%">
+                                    @foreach ($sub_categories as $sub_category)
 
-                                    <option value="{{ $category->id }}" {{ $select=($trip->category_id == $category->id)
+                                    <option value="{{ $sub_category->id }}" {{ $select=($trip->sub_category_id == $sub_category->id)
                                         ?
-                                        'selected' : '' }}>{{ $category->name }}</option>
+                                        'selected' : '' }}>{{ $sub_category->name }}</option>
                                     @endforeach
 
 
@@ -82,7 +82,7 @@
 
                             <div class="modal-footer">
                                 <a class="btn btn-secondary"
-                                    href="{{ route('trips.index',['trips' => $trips , 'categories' => $categories]) }}">Annuler</a>
+                                    href="{{ route('trips.index') }}">Annuler</a>
                                 <button type="submit" name="sub" class="btn btn-primary">Modifier</button>
 
                             </div>

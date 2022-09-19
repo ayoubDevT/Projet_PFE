@@ -9,8 +9,8 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function trips()
+    public function subcategories()
     {
-        return $this->hasMany(Trip::class);
+        return $this->hasMany(SubCategory::class);
     }
 }
