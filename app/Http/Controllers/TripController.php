@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Sub;
 use App\Models\SubCategory;
 use App\Models\Trip;
 use Illuminate\Http\Request;
@@ -13,8 +14,8 @@ class TripController extends Controller
 {
     public function index()
     {
-        $trips = Trip::with('sub_category')->get();
-        $sub_categories = SubCategory::all();
+        $trips = Trip::with('sub')->get();
+        $sub_categories = Sub::all();
         return view('admin.trips.trips', ['trips' => $trips, 'sub_categories' => $sub_categories]);
     }
 
@@ -24,7 +25,7 @@ class TripController extends Controller
        
        
         $att = $request->validate([
-            'sub_category_id' => 'required',
+            'sub_id' => 'required',
             'title' => 'required',
             'thumbnail' => 'required|image',
             'overview' => 'required',
@@ -45,7 +46,7 @@ class TripController extends Controller
     {
         $trip = Trip::find($id);
         $trips = Trip::all();
-        $sub_categories = SubCategory::all();
+        $sub_categories = Sub::all();
         return view('admin.trips.editTrip', ['trip' => $trip , 'sub_categories' => $sub_categories, 'trips' => $trips]);
     }
 
@@ -53,9 +54,9 @@ class TripController extends Controller
     {
         $trip = Trip::find($id);
         $trips = Trip::all();
-        $sub_categories = SubCategory::all();
+        $sub_categories = Sub::all();
         $att = $request->validate([
-            'sub_category_id' => 'required',
+            'sub_id' => 'required',
             'title' => 'required',
             'thumbnail' => 'image',
             'overview' => 'required',

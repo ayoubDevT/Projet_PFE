@@ -5,10 +5,10 @@
             <x-menu />
             <div>
                 <div id="demo-about"
-                    style="background-image: url('images/randonnees-excursions-maroc.jpg'); background-size: cover;">
+                    style="background-image: url('{{ asset(is_null($image) ? 'storage/': 'storage/' . $image->path) }}'); background-size: cover;">
                     <div class="itlabspro-position-about">
                         <div class="demo-inner-about">
-                            <h1 id="about">Our Social Projects</h1>
+                            <h1 class="text-uppercase" id="about">{{ $page->name }}</h1>
                         </div>
                     </div>
                 </div>

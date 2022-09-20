@@ -5,7 +5,16 @@
             <x-menu />
             <div>
                 <div id="demo-about"
-                    data-zs-src='["images/randonnees-excursions-maroc.jpg", "images/randonnees-excursions-maroc.jpg", "images/randonnees-excursions-maroc.jpg"]'
+                {{ $numItems = count($images)}}
+                {{ $i = 0}}
+                    data-zs-src='[@foreach ($images as $image)
+                    @if (++$i == $numItems)
+                        "{{ asset('storage/' . $image->path) }}"
+                    @else
+                        "{{ asset('storage/' . $image->path) }}",
+                    @endif
+                        
+                    @endforeach]'
                     data-zs-overlay="dots">
                     <div class="itlabspro-position-about">
                         <div class="demo-inner-about">

@@ -13,7 +13,7 @@ License: You must have a valid license purchased only from above link or https:/
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
+  <title>Atlas Outdoor</title>
   <!-- Scripts -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   <!-- core:css -->
@@ -68,7 +68,7 @@ License: You must have a valid license purchased only from above link or https:/
               <span class="link-title">Home</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mw-100">
             <a class="nav-link" data-toggle="collapse" href="#cultural" role="button" aria-expanded="false" aria-controls="cultural">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Cultural Encounters</span>
@@ -77,9 +77,9 @@ License: You must have a valid license purchased only from above link or https:/
             <div class="collapse" id="cultural">
               <ul class="nav sub-menu">
                 @foreach ($categoriesPage as $categoryPage)
-                @if ($categoryPage->category->name == 'cultural encounters')
+                @if ($categoryPage->category->name == 'Cultural Encounters')
                   <li class="nav-item">
-                  <a href="" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
                 </li>
                 @endif
                   
@@ -89,7 +89,7 @@ License: You must have a valid license purchased only from above link or https:/
             </div>
           </li>
           
-          <li class="nav-item">
+          <li class="nav-item mw-100">
             <a class="nav-link" data-toggle="collapse" href="#Treks" role="button" aria-expanded="false" aria-controls="Treks">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Treks & Adventures</span>
@@ -98,9 +98,9 @@ License: You must have a valid license purchased only from above link or https:/
             <div class="collapse" id="Treks">
               <ul class="nav sub-menu">
                 @foreach ($categoriesPage as $categoryPage)
-                @if ($categoryPage->category->name == 'treks & adventures')
+                @if ($categoryPage->category->name == 'Treks & Adventures')
                   <li class="nav-item">
-                  <a href="" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
                 </li>
                 @endif
                   
@@ -109,7 +109,7 @@ License: You must have a valid license purchased only from above link or https:/
             </div>
           </li>
           
-          <li class="nav-item">
+          <li class="nav-item mw-100">
             <a class="nav-link" data-toggle="collapse" href="#Luxury" role="button" aria-expanded="false" aria-controls="Luxury">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Luxury & MICE</span>
@@ -118,9 +118,9 @@ License: You must have a valid license purchased only from above link or https:/
             <div class="collapse" id="Luxury">
               <ul class="nav sub-menu">
                 @foreach ($categoriesPage as $categoryPage)
-                @if ($categoryPage->category->name == 'luxury & mice')
+                @if ($categoryPage->category->name == 'Luxury & MICE')
                   <li class="nav-item">
-                  <a href="" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
                 </li>
                 @endif
                   
@@ -129,7 +129,7 @@ License: You must have a valid license purchased only from above link or https:/
             </div>
           </li>
           
-          <li class="nav-item">
+          <li class="nav-item mw-100">
             <a class="nav-link" data-toggle="collapse" href="#Wellness" role="button" aria-expanded="false" aria-controls="Wellness">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Wellness</span>
@@ -138,9 +138,9 @@ License: You must have a valid license purchased only from above link or https:/
             <div class="collapse" id="Wellness">
               <ul class="nav sub-menu">
                 @foreach ($categoriesPage as $categoryPage)
-                @if ($categoryPage->category->name == 'wellness')
+                @if ($categoryPage->category->name == 'Wellness')
                   <li class="nav-item ">
-                  <a href="" class="nav-link mw-100 text-lowercase">{{ $categoryPage->name }}</a>
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link mw-100 text-lowercase">{{ $categoryPage->name }}</a>
                 </li>
                 @endif
                   
@@ -155,7 +155,7 @@ License: You must have a valid license purchased only from above link or https:/
             </a>
           </li>
           
-          <li class="nav-item">
+          <li class="nav-item mw-100">
             <a class="nav-link" data-toggle="collapse" href="#More" role="button" aria-expanded="false" aria-controls="More">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">More</span>

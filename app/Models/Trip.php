@@ -11,8 +11,8 @@ class Trip extends Model
     
     protected $guarded = [];
     
-    public function sub_category()
+    public function sub()
     {
-        return $this->belongsTo(SubCategory::class);
+        return $this->belongsTo(Sub::class);
     }
 }

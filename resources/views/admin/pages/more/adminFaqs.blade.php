@@ -25,7 +25,7 @@
               </div>
               @endif
   
-              <form action="{{ route('image.store') }}" method="post" enctype="multipart/form-data">
+              <form action="{{ route('image.store', ['page'=>$page->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input name="path" type="file" id="myDropify" class="border" />
                 @error('path')
@@ -46,16 +46,16 @@
             <div class="table-responsive">
   
               <div>
-                <form action="{{ route('page.store')}}" method="post">
+                <form action="{{ route('page.store', ['page'=>$page->id])}}" method="post">
                   @csrf
+                  @method('PUT')
                   <textarea name="body" id="editor" cols="30" rows="10"></textarea>
-                  <input type="text" value="faqs" name="name" hidden>
                   <input type="submit" value="submit" class="btn btn-primary btn-icon-text mb-2  mt-2">
                 </form>
               </div>
               <hr>
               <div style="border: 1px solid;" class="p-3">
-                {!! App\Models\Page::where('name','faqs')->get()[0]->body ?? 'no code' !!}
+                {!! $page->body == null ? 'no code' : $page->body !!}
               </div>
   
             </div>

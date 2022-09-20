@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-body">
             <h6 class="card-title">Ajouter une image a votre slider</h6>
-            <form action="{{ route('homeimg.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('homeimg.store', ['page' => $page->id]) }}" method="post" enctype="multipart/form-data">
               @csrf
               <input name="path" type="file" id="myDropify" class="border" />
               @error('path')

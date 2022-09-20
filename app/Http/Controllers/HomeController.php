@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use App\Models\Page;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $imgs = Image::where('page','home')->get();
+        $page = Page::where('slug', 'home')->first();
+        $imgs = Image::where('page_id',$page->id)->get();
+        
         $trips = Trip::all();
-        return view('admin.pages.home.home', ['imgs' => $imgs, 'trips' => $trips]);
+        return view('admin.pages.home.home', ['imgs' => $imgs, 'trips' => $trips, 'page' => $page]);
     }
-    public function store(Request $request)
+    public function store(Request $request, $page)
     {
 
         $att = $request->validate([
@@ -22,6 +25,7 @@ class HomeController extends Controller
             'page' => 'required'
         ]);
         $att['path'] = request()->file('path')->store('slider');
+        $att['page_id'] = $page;
 
         Image::create($att);
         return back();

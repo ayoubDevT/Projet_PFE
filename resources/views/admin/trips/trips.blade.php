@@ -17,7 +17,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Categorie</label>
-                                <select class="js-example-basic-single w-100" name="sub_category_id" data-width="100%">
+                                <select class="js-example-basic-single w-100" name="sub_id" data-width="100%">
                                     @foreach ($sub_categories as $sub_category)
                                     <option value="{{ $sub_category->id }}">{{ $sub_category->name }}</option>
                                     @endforeach
@@ -98,7 +98,7 @@
 
                                     <tr>
                                         <td>{{ $trip->title }}</td>
-                                        <td>{{ $trip->sub_category->name }}</td>
+                                        <td>{{ $trip->sub->name }}</td>
                                         <td><img src="{{asset('storage/' . $trip->thumbnail) }}" alt="trip_image"></td>
                                         <td>{{ $trip->days }}</td>
                                         <td>{{ $trip->min_age }}</td>

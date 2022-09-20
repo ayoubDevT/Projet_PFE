@@ -2,7 +2,7 @@
     <div class="itlabspro-top">
         <div class="row">
             <div class="col-3 pt-2">
-                <img src="{{ asset('assets/clientsite/images/logo.png') }}" alt="" class="logo">
+                <a href="{{ route('client.home') }}"><img src="{{ asset('assets/clientsite/images/logo.png') }}" alt="" class="logo"></a>
             </div>
             <div class="col-9 " style="margin-left: auto; ">
                 <div class="row">
@@ -58,11 +58,12 @@
                                     <a href="#" class=" dropdown-toggle " data-toggle="dropdown">CULTURAL
                                         ENCOUNTERS</a>
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
-                                        <a href="./cultural_roundtrips.html" class="dropdown-item  ">CULTURAL
-                                            ROUNDTRIPS</a>
-                                        <a href="./self_drive_trips.html" class="dropdown-item  text-uppercase">SELF
-                                            DRIVE TRIPS</a>
-
+                                        @foreach ($categoriesPage as $categoryPage)
+                                        @if ($categoryPage->category->name == 'Cultural Encounters')
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase">{{ $categoryPage->name }}</a>
+                                        @endif
+                  
+                                        @endforeach
                                     </div>
                                 </div>
                             </li>
@@ -71,16 +72,12 @@
                                     <a href="#" class=" dropdown-toggle " data-toggle="dropdown">TREKS &
                                         ADVENTURES</a>
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
-                                        <a href="./family_adventure.html" class="dropdown-item  ">
-                                            FAMILY ADVENTURE</a>
-                                        <a href="./atlas_sahara_hiking.html" class="dropdown-item  text-uppercase">ATLAS
-                                            & SAHARA HIKING</a>
-                                        <a href="./cycling_skiing.html" class="dropdown-item  text-uppercase">BIKING &
-                                            SKIING</a>
-                                        <a href="./school_trips.html" class="dropdown-item  text-uppercase">SCHOOL
-                                            TRIPS</a>
-                                        <a href="./solidatity_travels.html"
-                                            class="dropdown-item  text-uppercase">SOLIDARITY TRAVELS</a>
+                                        @foreach ($categoriesPage as $categoryPage)
+                                        @if ($categoryPage->category->name == 'Treks & Adventures')
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase">{{ $categoryPage->name }}</a>
+                                        @endif
+                  
+                                        @endforeach
 
                                     </div>
                                 </div>
@@ -90,10 +87,12 @@
                                     <a href="#" class=" dropdown-toggle " data-toggle="dropdown">LUXURY &
                                         MICE</a>
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
-                                        <a href="./luxury_private_holidays.html" class="dropdown-item  ">LUXURY PRIVATE
-                                            HOLIDAYS</a>
-                                        <a href="./mice.html" class="dropdown-item  text-uppercase">M.I.C.E</a>
-                                        <a href="./golf.html" class="dropdown-item  text-uppercase">GOLF</a>
+                                        @foreach ($categoriesPage as $categoryPage)
+                                        @if ($categoryPage->category->name == 'Luxury & MICE')
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase">{{ $categoryPage->name }}</a>
+                                        @endif
+                  
+                                        @endforeach
 
                                     </div>
                                 </div>
@@ -102,23 +101,12 @@
                                 <div class="nav-item dropdown">
                                     <a href="#" class=" dropdown-toggle " data-toggle="dropdown">WELLNESS</a>
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
-                                        <a href="./spa_in_marrakech.html" class="dropdown-item  ">SPA IN MARRAKECH</a>
-                                        <a href="./spa_in_desert.html" class="dropdown-item  text-uppercase">SPA
-                                            EXPERIENCE IN THE DESERT OR IN THE MONTAINS</a>
-
-                                        <a href="./yoga_classes_in_marrakech.html"
-                                            class="dropdown-item  text-uppercase">YOGA
-                                            CLASSES IN MARRAKECH</a>
-                                        <a href="./yoga_escape_in_the_desert.html"
-                                            class="dropdown-item  text-uppercase">YOGA
-                                            ESCAPE IN THE DESERT</a>
-                                        <a href="./roses_valley_hiking_with_yoga.html"
-                                            class="dropdown-item  text-uppercase">ROSES VALLEY HIKING WITH YOGA
-                                            SESSIONS</a>
-                                        <a href="./yoga_ocean_waves.html" class="dropdown-item  text-uppercase">YOGA
-                                            OCEAN WAVES</a>
-                                        <a href="./meditation_breaks.html"
-                                            class="dropdown-item  text-uppercase">MEDITATION BREAKS</a>
+                                        @foreach ($categoriesPage as $categoryPage)
+                                        @if ($categoryPage->category->name == 'Wellness')
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase ">{{ $categoryPage->name }}</a>
+                                        @endif
+                  
+                                        @endforeach
                                     </div>
                                 </div>
                             </li>

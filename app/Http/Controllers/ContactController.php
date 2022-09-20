@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 use App\Models\Image;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        $imgs = Image::where('page','contact')->get();
-        return view('admin.pages.contact.adminContact', ['imgs' => $imgs]);
+        $page = Page::where('slug', 'contact')->first();
+        $imgs = Image::where('page_id',$page->id)->get();
+        return view('admin.pages.contact.adminContact', ['imgs' => $imgs, 'page' => $page]);
     }
-    public function store(Request $request)
+    public function store(Request $request, $page)
     {
 
         $att = $request->validate([
@@ -19,6 +21,7 @@ class ContactController extends Controller
             'page' => 'required'
         ]);
         $att['path'] = request()->file('path')->store('slider');
+        $att['page_id'] = $page;
 
         Image::create($att);
         return back();

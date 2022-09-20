@@ -31,7 +31,7 @@
                 @error('path')
                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                 @enderror
-                <input type="text" value="general_advices" name="page" hidden>
+                <input type="text" value="{{ $page->slug }}" name="page" hidden>
                 <input type="submit" value="Ajouter" class="btn btn-primary btn-icon-text mb-2  mt-2">
               </form>
             </div>
@@ -55,7 +55,7 @@
               </div>
               <hr>
               <div style="border: 1px solid;" class="p-3">
-                {!! $page->body == null ? 'no code' : $page->body !!}
+                {!!  $page->body == null ? 'no code' : $page->body !!}
               </div>
   
             </div>

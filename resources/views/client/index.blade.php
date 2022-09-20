@@ -3,10 +3,19 @@
     <body class="body">
         <div class="itlabspro-container">
             <x-menu />
-
+            {{-- {{ "asset('assets/clientsite/images/randonnees-excursions-maroc.jpg') }}", "{{ asset('assets/clientsite/images/randonnees-excursions-maroc.jpg') }}"--}}
             <div class="contain">
-                <div id="demo-1"
-                    data-zs-src='["images/randonnees-excursions-maroc.jpg", "images/randonnees-excursions-maroc.jpg", "images/randonnees-excursions-maroc.jpg"]'
+                <div id="demo-1" 
+                {{ $numItems = count($images)}}
+                {{ $i = 0}}
+                    data-zs-src='[@foreach ($images as $image)
+                    @if (++$i == $numItems)
+                        "{{ asset('storage/' . $image->path) }}"
+                    @else
+                        "{{ asset('storage/' . $image->path) }}",
+                    @endif
+                        
+                    @endforeach]'
                     data-zs-overlay="dots">
                     <div class="itlabspro-position">
                         <div class="demo-inner-content">
@@ -109,114 +118,26 @@
             <hr id="gold">
             <div class="itlabspro-center">
                 <div class="row">
-                    <div class="col-4" style="width: 350px;">
-                        <img class="card-img-top trip-img" src="images/scarabeo.jpg" alt="Card image cap">
-                        <div class="card-body mt-4" style="text-align: left;">
-                            <h6 style="color: #B6935C">Explore the desert of Agafay</h6>
-                            <p class="card-text">Overview: About thirty kilometres from the city of </p>
-                            <hr id="card">
+                    @foreach ($trips as $trip)
+                <div class="col-4" style="width: 350px;">
+                    <img class="card-img-top trip-img" src="{{ asset('storage/'.$trip->thumbnail ) }}" alt="Card image cap">
+                    <div class="card-body mt-4" style="text-align: left;">
+                        <h6 style="color: #B6935C">{{ $trip->title }}</h6>
+                        <p class="card-text">Overview: {{ $trip->overview }} </p>
+                        <hr id="card">
 
-                        </div>
-                        <div class="row" class="card-bottom">
-                            <div class="col-4 ">
-                                <p class="ml-5 trip-price">$ 300.00</p>
-                            </div>
-                            <div class="col-8 ">
-                                <button id="more" onclick="location.href = '';">Read more ></button>
-                            </div>
-
-                        </div>
                     </div>
-                    <div class="col-4" style="width: 350px;">
-                        <img class="card-img-top trip-img" src="images/cutural-tours-morocco.jpg" alt="Card image cap">
-                        <div class="card-body mt-4" style="text-align: left;">
-                            <h6 style="color: #B6935C">Explore the marvels of Morocco</h6>
-                            <p class="card-text">Overview: This two weeks tour invites you to explore the</p>
-                            <hr id="card">
-
+                    <div class="row" class="card-bottom">
+                        <div class="col-4 ">
+                            <p class="ml-5 trip-price">$ 300.00</p>
                         </div>
-                        <div class="row" class="card-bottom">
-                            <div class="col-4">
-                                <p class="ml-5 trip-price">$ 300.00</p>
-                            </div>
-                            <div class="col-8 ">
-                                <button id="more" onclick="location.href = '';">Read more ></button>
-                            </div>
-
+                        <div class="col-8 ">
+                            <button id="more" onclick="location.href = '';">Read more ></button>
                         </div>
+
                     </div>
-                    <div class="col-4" style="width: 350px;">
-                        <img class="card-img-top trip-img" src="images/South-Morocco.jpg" alt="Card image cap">
-                        <div class="card-body mt-4" style="text-align: left;">
-                            <h6 style="color: #B6935C">Mysteries of south Morocco</h6>
-                            <p class="card-text">Overview: This tour is an invitation to discover the </p>
-                            <hr id="card">
-
-                        </div>
-                        <div class="row" class="card-bottom">
-                            <div class="col-4">
-                                <p class="ml-5 trip-price">$ 300.00</p>
-                            </div>
-                            <div class="col-8 ">
-                                <button id="more" onclick="location.href = '';">Read more ></button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-4" style="width: 350px;">
-                        <img class="card-img-top trip-img" src="images/Cultural-tours-Morocco.jpg" alt="Card image cap">
-                        <div class="card-body mt-4" style="text-align: left;">
-                            <h6 style="color: #B6935C">Cultural trip morocco, the cities of sultans</h6>
-                            <p class="card-text">Overview: This cultural trip morocco is a great choice for </p>
-                            <hr id="card">
-
-                        </div>
-                        <div class="row" class="card-bottom">
-                            <div class="col-4">
-                                <p class="ml-5 trip-price">$ 300.00</p>
-                            </div>
-                            <div class="col-8 ">
-                                <button id="more" onclick="location.href = '';">Read more ></button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-4" style="width: 350px;">
-                        <img class="card-img-top trip-img" src="images/Saghro-Hiking-Morocco.jpg" alt="Card image cap">
-                        <div class="card-body mt-4" style="text-align: left;">
-                            <h6 style="color: #B6935C">Saghro… walking on the moon</h6>
-                            <p class="card-text">Overview: The Jebel Saghro extends to the South from the </p>
-                            <hr id="card">
-
-                        </div>
-                        <div class="row" class="card-bottom">
-                            <div class="col-4">
-                                <p class="ml-5 trip-price">$ 300.00</p>
-                            </div>
-                            <div class="col-8 ">
-                                <button id="more" onclick="location.href = '';">Read more ></button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-4" style="width: 350px;">
-                        <img class="card-img-top trip-img" src="images/family-holiday-morocco.jpg" alt="Card image cap">
-                        <div class="card-body mt-4" style="text-align: left;">
-                            <h6 style="color: #B6935C">Morocco family tour</h6>
-                            <p class="card-text">Morocco family tour Overview: On this Morocco family tour, </p>
-                            <hr id="card">
-
-                        </div>
-                        <div class="row" class="card-bottom">
-                            <div class="col-4">
-                                <p class="ml-5 trip-price">$ 300.00</p>
-                            </div>
-                            <div class="col-8 ">
-                                <button id="more" onclick="location.href = '';">Read more ></button>
-                            </div>
-
-                        </div>
-                    </div>
+                </div>
+                @endforeach
                 </div>
             </div>
         </div>

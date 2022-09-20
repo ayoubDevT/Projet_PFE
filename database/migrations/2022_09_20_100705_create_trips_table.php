@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sub_category_id')->onDelete('cascade');
+            $table->foreignId('sub_id')->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->integer('show');
             $table->string('thumbnail')->nullable();

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('page_id')->constrained()->cascadeOnDelete();
             $table->text('path');
             $table->text('page');
             $table->timestamps();
