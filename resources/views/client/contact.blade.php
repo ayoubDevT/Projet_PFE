@@ -4,16 +4,13 @@
         <div class="itlabspro-container-about">
             <x-menu />
             <div>
-                <div id="demo-about"
-                {{ $numItems = count($images)}}
-                {{ $i = 0}}
-                    data-zs-src='[@foreach ($images as $image)
+                <div id="demo-about" {{ $numItems=count($images)}} {{ $i=0}} data-zs-src='[@foreach ($images as $image)
                     @if (++$i == $numItems)
-                        "{{ asset('storage/' . $image->path) }}"
+                        "{{ asset(' storage/' . $image->path) }}"
                     @else
-                        "{{ asset('storage/' . $image->path) }}",
+                    "{{ asset('storage/' . $image->path) }}",
                     @endif
-                        
+
                     @endforeach]'
                     data-zs-overlay="dots">
                     <div class="itlabspro-position-about">
@@ -56,32 +53,45 @@
                         </div>
                         <div class="col-lg-4">
                             <h4>Follow Us :</h4>
-                            <a href=""><img class="icon" src="images/facebook-logo.png" alt=""></a>
-                            <a href=""><img class="icon" src="images/twitter.png" alt=""></a>
-                            <a href=""><img class=" instagram" src="images/instagram.png" alt=""></a>
-                            <a href=""><img class="icon" src="images/youtube.png" alt=""></a>
+                            <a href=""><img class="icon" src="{{ asset('assets/clientsite/images/facebook-logo.png') }}" alt=""></a>
+                            <a href=""><img class="icon" src="{{ asset('assets/clientsite/images/twitter.png') }}" alt=""></a>
+                            <a href=""><img class=" instagram" src="{{ asset('assets/clientsite/images/instagram.png') }}" alt=""></a>
+                            <a href=""><img class="icon" src="{{ asset('assets/clientsite/images/youtube.png') }}" alt=""></a>
                         </div>
                     </div>
                 </div>
 
-                <form action="" method="post">
+                <form action="{{ route('client.message.store') }}" method="post">
+                    @csrf
                     <h4>Send Us</h4>
                     <div class=" py-4">
-                        <input class="input-contact" type="text" placeholder="Full Name *" name="name" required>
+                        <input class="input-contact" type="text" value="{{ old('name') }}" placeholder="Full Name *" name="name" required>
+                        @error('name')
+                        <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="  py-4">
-                        <input class="input-contact" type="text" placeholder="E-Mail *" name="email" required>
+                        <input class="input-contact" type="email" value="{{ old('email') }}" placeholder="E-Mail *" name="email" required>
+                        @error('email')
+                        <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="  py-4">
-                        <input class="input-contact" type="text" placeholder="Your Phone Number *" name="phone"
+                        <input class="input-contact" type="text" value="{{ old('phone') }}" placeholder="Your Phone Number *" name="phone"
                             required>
+                        @error('phone')
+                        <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="  py-4">
-                        <input class="input-contact" type="text" placeholder="Subject" name="subject" required>
+                        <input class="input-contact" type="text" value="{{ old('subject') }}" placeholder="Subject" name="subject">
                     </div>
                     <div class=" py-4">
                         <textarea style="height: 150px !important;" class="input-contact" placeholder="Message *"
-                            name="message" required></textarea>
+                            name="message" required>{{ old('message') }}</textarea>
+                        @error('message')
+                        <p class="text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class=" py-4">

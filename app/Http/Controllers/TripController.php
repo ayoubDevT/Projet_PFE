@@ -29,6 +29,8 @@ class TripController extends Controller
             'title' => 'required',
             'thumbnail' => 'required|image',
             'overview' => 'required',
+            'content' => 'required',
+            'price' => 'required|numeric',
             'days' => 'required|numeric',
             'min_age' => 'required|numeric|min:1|max:99',
             'months' => 'required'
@@ -45,21 +47,20 @@ class TripController extends Controller
     public function update($id)
     {
         $trip = Trip::find($id);
-        $trips = Trip::all();
         $sub_categories = Sub::all();
-        return view('admin.trips.editTrip', ['trip' => $trip , 'sub_categories' => $sub_categories, 'trips' => $trips]);
+        return view('admin.trips.editTrip', ['trip' => $trip , 'sub_categories' => $sub_categories]);
     }
 
     public function edit(Request $request, $id)
     {
         $trip = Trip::find($id);
-        $trips = Trip::all();
-        $sub_categories = Sub::all();
         $att = $request->validate([
             'sub_id' => 'required',
             'title' => 'required',
             'thumbnail' => 'image',
             'overview' => 'required',
+            'content' => 'required',
+            'price' => 'required|numeric',
             'days' => 'required|numeric',
             'min_age' => 'required|numeric|min:1|max:99',
             'months' => 'required'

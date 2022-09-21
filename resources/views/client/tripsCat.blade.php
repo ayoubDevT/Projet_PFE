@@ -33,10 +33,10 @@
                     </div>
                     <div class="row" class="card-bottom">
                         <div class="col-4 ">
-                            <p class="ml-5 trip-price">$ 300.00</p>
+                            <p class="ml-5 trip-price">$ {{ $trip->price }}</p>
                         </div>
                         <div class="col-8 ">
-                            <button id="more" onclick="location.href = '';">Read more ></button>
+                            <button id="more" onclick="location.href = '{{ route('client.trip', ['id'=>$trip->id]) }}';">Read more ></button>
                         </div>
 
                     </div>

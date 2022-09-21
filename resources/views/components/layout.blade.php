@@ -190,17 +190,30 @@ License: You must have a valid license purchased only from above link or https:/
               <span class="link-title">Contact us</span>
             </a>
           </li>
-          <li class="nav-item nav-category">CRUD</li>
+          <li class="nav-item nav-category">Modification</li>
           <li class="nav-item">
             <a href="{{ route('trips.index') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Trips CRUD</span>
+              <span class="link-title">Trips Modification</span>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{ route('category.index') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Categories CRUD</span>
+              <span class="link-title">Categories Modification</span>
+            </a>
+          </li>
+          <li class="nav-item nav-category">Messages</li>
+          <li class="nav-item">
+            <a href="{{ route('message.index') }}" class="nav-link">
+              <i class="link-icon" data-feather="mail"></i>
+              <span class="link-title">Messages</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('booking.index') }}" class="nav-link">
+              <i class="link-icon" data-feather="plus-circle"></i>
+              <span class="link-title">Bookings</span>
             </a>
           </li>
         </ul>
@@ -362,7 +375,7 @@ License: You must have a valid license purchased only from above link or https:/
 								</div>
 							</div>
 						</li>-->
-            <li class="nav-item dropdown nav-notifications">
+            <!--<li class="nav-item dropdown nav-notifications">
               <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i data-feather="bell"></i>
@@ -426,7 +439,7 @@ License: You must have a valid license purchased only from above link or https:/
                   <a href="javascript:;">View all</a>
                 </div>
               </div>
-            </li>
+            </li>-->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
               <!-- Teams Dropdown -->
               @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

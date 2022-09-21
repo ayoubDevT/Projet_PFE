@@ -24,6 +24,10 @@ use Illuminate\Support\Facades\Route;
     Route::get('/prepare_your_travel_to_morocco', [App\Http\Controllers\SiteController::class, 'prepareTravel'])->name('client.prepareTravel');
     Route::get('/videos', [App\Http\Controllers\SiteController::class, 'videos'])->name('client.videos');
     Route::get('/trips/{slug}', [App\Http\Controllers\SiteController::class, 'tripsCat'])->name('client.tripsCat');
+    Route::get('/trip/{id}', [App\Http\Controllers\SiteController::class, 'trip'])->name('client.trip');
+    Route::post('store_booking', [App\Http\Controllers\BookingController::class, 'store'])->name('client.booking.store');
+    Route::post('store_message', [App\Http\Controllers\MessageController::class, 'store'])->name('client.message.store');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -45,7 +49,7 @@ Route::middleware([
     //osp
     Route::get('adminOsp', [App\Http\Controllers\ImageController::class, 'osp'])->name('osp');
 
-    //osp
+    //tripCAt
     Route::get('Category/{slug}', [App\Http\Controllers\ImageController::class, 'tripsByCat'])->name('tripsCat');
     
 
@@ -81,7 +85,14 @@ Route::middleware([
     Route::get('category', [App\Http\Controllers\SubController::class, 'index'])->name('category.index');
     Route::post('store_category', [App\Http\Controllers\SubController::class, 'store'])->name('category.store');
     Route::get('delete_category', [App\Http\Controllers\SubController::class, 'delete'])->name('category.delete');
+    Route::get('update_category/{id}', [App\Http\Controllers\SubController::class, 'update'])->name('category.update');
+    Route::put('edit_category/{slug}', [App\Http\Controllers\SubController::class, 'edit'])->name('category.edit');
     
+    //messages
+    Route::get('messages', [App\Http\Controllers\MessageController::class, 'index'])->name('message.index');
+
+    //booking
+    Route::get('bookings', [App\Http\Controllers\BookingController::class, 'index'])->name('booking.index');
     
     //page ckeditor
     Route::post('ck/upload', [App\Http\Controllers\ckupload::class, 'ckupload'])->name('ck.upload');

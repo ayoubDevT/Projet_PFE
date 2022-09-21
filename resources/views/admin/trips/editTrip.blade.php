@@ -12,9 +12,9 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label for="exampleInputText1">Titre</label>
+                                <label for="title">Titre</label>
                                 <input value="{{ $trip->title }}" type="text" class="form-control"
-                                    id="exampleInputText1" name="title">
+                                    id="title" name="title">
                                 @error('title')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
@@ -33,25 +33,40 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Description</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" name="overview"
-                                    rows="5">{{ $trip->overview }}</textarea>
+                                <label for="overview">Description</label>
+                                <input value="{{ $trip->title }}" type="text" class="form-control"
+                                    id="overview" name="overview">
                                 @error('overview')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputText1">Jours</label>
-                                <input value="{{ $trip->days }}" type="text" class="form-control" id="exampleInputText1"
+                                <label for="editor">Content</label>
+                                <textarea name="content" id="editor" cols="30" rows="10">{!! $trip->content !!}</textarea>
+                                @error('content')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Prix</label>
+                                <input value="{{ $trip->price }}" type="number" class="form-control" id="price"
+                                    name="price" placeholder="Number Days">
+                                @error('price')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="days">Jours</label>
+                                <input value="{{ $trip->days }}" type="text" class="form-control" id="days"
                                     name="days" placeholder="Number Days">
                                 @error('days')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputText1">Min Age</label>
+                                <label for="min_age">Min Age</label>
                                 <input value="{{ $trip->min_age }}" type="text" class="form-control"
-                                    id="exampleInputText1" name="min_age" placeholder="Number Years+">
+                                    id="min_age" name="min_age" placeholder="Number Years+">
                                 @error('min_age')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror

@@ -14,6 +14,7 @@
     <link rel="icon" href="{{ asset('assets/images/favicon-32x32.jpg') }}" />
     <script type="text/javascript" src=" {{ asset('assets/clientsite/js/modernizr-2.6.2.min.js') }}"></script>
 </head>
+
 {{ $slot }}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

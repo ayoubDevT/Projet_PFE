@@ -8,9 +8,9 @@
                         <form action="{{ route('trips.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputText1">Titre</label>
+                                <label for="title">Titre</label>
                                 <input value="{{ old('title') }}" type="text" class="form-control"
-                                    id="exampleInputText1" name="title">
+                                    id="title" name="title">
                                 @error('title')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
@@ -26,25 +26,37 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Description</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" name="overview"
-                                    rows="5">{{ old('overview') }}</textarea>
+                                <label for="overview">Description</label>
+                                <input value="{{ old('overview') }}" type="text" class="form-control"
+                                id="overview" name="overview">
                                 @error('overview')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputText1">Jours</label>
-                                <input value="{{ old('days') }}" type="number" class="form-control" id="exampleInputText1"
+                                <label for="editor">Content</label>
+                                <textarea name="content" id="editor" cols="30" rows="10">{{ old('content') }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Prix</label>
+                                <input value="{{ old('price') }}" type="number" class="form-control" id="price"
+                                    name="price" placeholder="Number Days">
+                                @error('price')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="days">Jours</label>
+                                <input value="{{ old('days') }}" type="number" class="form-control" id="days"
                                     name="days" placeholder="Number Days">
                                 @error('days')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputText1">Min Age</label>
+                                <label for="min_age">Min Age</label>
                                 <input value="{{ old('min_age') }}" type="number" class="form-control"
-                                    id="exampleInputText1" name="min_age" placeholder="Number Years+">
+                                    id="min_age" name="min_age" placeholder="Number Years+">
                                 @error('min_age')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
@@ -87,6 +99,7 @@
                                         <th>Titre</th>
                                         <th>Category</th>
                                         <th>Thumbnail</th>
+                                        <th>Prix</th>
                                         <th>Jours</th>
                                         <th>Min Age</th>
                                         <th>Mois</th>
@@ -100,6 +113,7 @@
                                         <td>{{ $trip->title }}</td>
                                         <td>{{ $trip->sub->name }}</td>
                                         <td><img src="{{asset('storage/' . $trip->thumbnail) }}" alt="trip_image"></td>
+                                        <td>{{ $trip->price }}</td>
                                         <td>{{ $trip->days }}</td>
                                         <td>{{ $trip->min_age }}</td>
                                         <td>{{ $trip->months }}</td>

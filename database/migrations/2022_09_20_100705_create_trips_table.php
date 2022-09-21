@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('show');
             $table->string('thumbnail')->nullable();
             $table->text('overview');
+            $table->float('price');
+            $table->text('content');
             $table->integer('days');
             $table->integer('min_age');
             $table->string('months');

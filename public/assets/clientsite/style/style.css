@@ -773,3 +773,7 @@ select.form-control {
     font-weight: bold !important;
     font-size: 15px !important;
 }
+
+.svg-filter{
+    filter: invert(63%) sepia(21%) saturate(786%) hue-rotate(358deg) brightness(92%) contrast(90%);
+}

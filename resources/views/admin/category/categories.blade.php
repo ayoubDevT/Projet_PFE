@@ -66,8 +66,8 @@
                                             
                                             <a class="btn btn-danger btn-icon-text mb-2  mt-2"
                                                 href="{{ route('category.delete', ['ids'=>$subcategory->id ,'idp'=>$page->id]) }}">Supprimer</a>
-                                            <!--<a class="btn btn-primary btn-icon-text mb-2  mt-2"
-                                                href="{{-- route('category.update',['id'=>$subcategory->id]) --}}">Modifier</a>-->
+                                            <a class="btn btn-primary btn-icon-text mb-2  mt-2"
+                                                href="{{ route('category.update',['id'=>$subcategory->id]) }}">Modifier</a>
                                             @endif
                                             @endforeach
                                         </td>

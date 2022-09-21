@@ -71,4 +71,12 @@ class SiteController extends Controller
         }])->get();*/
         return view('client.tripsCat', ['page'=>$page,'image'=>$image,'trips'=>$trips,'sub'=>$sub]);
     }
+    public function trip($id)
+    {
+        $trip = Trip::find($id);
+        /*$trips = Trip::whereHas(['category' => function ($query) {
+            $query->where('slug', $slug);
+        }])->get();*/
+        return view('client.trip', ['trip'=>$trip]);
+    }
 }
