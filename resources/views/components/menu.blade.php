@@ -60,7 +60,7 @@
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
                                         @foreach ($categoriesPage as $categoryPage)
                                         @if ($categoryPage->category->name == 'Cultural Encounters')
-                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase">{{ $categoryPage->name }}</a>
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase {{ request()->is('trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name }}</a>
                                         @endif
                   
                                         @endforeach
@@ -74,7 +74,7 @@
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
                                         @foreach ($categoriesPage as $categoryPage)
                                         @if ($categoryPage->category->name == 'Treks & Adventures')
-                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase">{{ $categoryPage->name }}</a>
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase {{ request()->is('trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name }}</a>
                                         @endif
                   
                                         @endforeach
@@ -89,7 +89,7 @@
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
                                         @foreach ($categoriesPage as $categoryPage)
                                         @if ($categoryPage->category->name == 'Luxury & MICE')
-                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase">{{ $categoryPage->name }}</a>
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase {{ request()->is('trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name }}</a>
                                         @endif
                   
                                         @endforeach
@@ -103,7 +103,7 @@
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
                                         @foreach ($categoriesPage as $categoryPage)
                                         @if ($categoryPage->category->name == 'Wellness')
-                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase ">{{ $categoryPage->name }}</a>
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase {{ request()->is('trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name }}</a>
                                         @endif
                   
                                         @endforeach

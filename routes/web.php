@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Route;
     Route::post('store_booking', [App\Http\Controllers\BookingController::class, 'store'])->name('client.booking.store');
     Route::post('store_message', [App\Http\Controllers\MessageController::class, 'store'])->name('client.message.store');
 
-
+//admin
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -98,5 +98,3 @@ Route::middleware([
     Route::post('ck/upload', [App\Http\Controllers\ckupload::class, 'ckupload'])->name('ck.upload');
     Route::put('ck/page/{page}', [App\Http\Controllers\PageController::class, 'store'])->name('page.store');
 });
-
-
