@@ -410,6 +410,10 @@ input[type="date"] {
 .trip-h5 {
     font-weight: bolder;
 }
+.trip-h5-index {
+    font-weight: bolder;
+    padding-top: 100px;
+}
 
 .trip-img {
     height: 300px;

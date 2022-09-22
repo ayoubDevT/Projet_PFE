@@ -114,7 +114,7 @@
         </div>
 
         <div class="trip">
-            <h5 class="trip-h5">TRIP INSPIRATIONS</h5>
+            <h5 class="trip-h5-index">TRIP INSPIRATIONS</h5>
             <hr id="gold">
             <div class="itlabspro-center">
                 <div class="row">
@@ -122,8 +122,8 @@
                 <div class="col-4" style="width: 350px;">
                     <img class="card-img-top trip-img" src="{{ asset('storage/'.$trip->thumbnail ) }}" alt="Card image cap">
                     <div class="card-body mt-4" style="text-align: left;">
-                        <h6 style="color: #B6935C">{{ $trip->title }}</h6>
-                        <p class="card-text">Overview: {{ $trip->overview }} </p>
+                        <h6 style="color: #B6935C">{{ $trip->title_en }}</h6>
+                        <p class="card-text">Overview: {{ $trip->overview_en }} </p>
                         <hr id="card">
 
                     </div>
