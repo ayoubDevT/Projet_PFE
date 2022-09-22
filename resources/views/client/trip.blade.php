@@ -8,7 +8,7 @@
                     style="background-image: url('{{ asset('storage/'.$trip->thumbnail) }}'); background-size: cover;">
                     <div class="itlabspro-position-about">
                         <div class="demo-inner-about">
-                            <h1 class="text-uppercase" id="about">{{ $trip->title }}</h1>
+                            <h1 class="text-uppercase" id="about">{{ $trip->title_en }}</h1>
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 py-5" style="text-align: left">
-                            {!! $trip->content !!}
+                            {!! $trip->content_en !!}
                         </div>
                     </div>
                 </div>

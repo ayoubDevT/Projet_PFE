@@ -6,7 +6,7 @@
             <div>
                 <div id="demo-about" {{ $numItems=count($images)}} {{ $i=0}} data-zs-src='[@foreach ($images as $image)
                     @if (++$i == $numItems)
-                        "{{ asset(' storage/' . $image->path) }}"
+                        "{{ asset('storage/' . $image->path) }}"
                     @else
                     "{{ asset('storage/' . $image->path) }}",
                     @endif

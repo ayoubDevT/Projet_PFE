@@ -43,7 +43,7 @@
                     <div class="col-12 ">
                         <ul class="d-inline-flex" style="max-width: 100%;">
                             <li class="px-2">
-                                <a class="{{ (request()->is('/')) ? 'itlabspro-active' : ((request()->is('language?lang='.Session::get('lang'))) ? 'itlabspro-active' : '') }}"
+                                <a class="{{ (request()->is('/')) ? 'itlabspro-active' : ((request()->is('language*')) ? 'itlabspro-active' : '') }}"
                                     href="{{ route('client.homeLang', ['lang'=>Session::get('lang')]) }}">
                                     HOME
                                 </a>

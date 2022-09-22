@@ -32,7 +32,7 @@
             </div>
             <div class="col-12 col-xl-3 col-md-3 col-sm-12 col-xs-12 footer-div3">
                 <span class="footer-span">Contact Info</span><br><br>
-                <a href="" class="footer-a">Square Allal Ben Ahmed street
+                <a href="https://goo.gl/maps/qj52co8iPeixCNuX6" target="_blank" class="footer-a">Square Allal Ben Ahmed street
                     Villa Elabbassia N° 10, Guéliz
                     40 000 Marrakech</a><br><br>
                 <a href="tel:05 24 42 29 48" class="footer-a">+212(0)5 24
