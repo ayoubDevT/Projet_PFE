@@ -24,18 +24,20 @@ class SubController extends Controller
        //ddd($request);
         $att = $request->validate([
             'category_id' => 'required',
-            'name' => 'required'
+            'name_en' => 'required|unique:subs,name_en,{$this->sub->id}',
+            'name_de' => 'required|unique:subs,name_de,{$this->sub->id}',
+            'name_fr' => 'required|unique:subs,name_fr,{$this->sub->id}'
             
            
         ]);
         $attPage = $request->validate([
-            'name' => 'required'
+            'name_en' => 'required'
             
            
         ]);
         
-        $att['slug'] = str_replace(' ', '-',  $att['name']);
-        $attPage['slug'] = str_replace(' ', '-',  $att['name']);
+        $att['slug'] = str_replace(' ', '-',  $att['name_en']);
+        $attPage['slug'] = str_replace(' ', '-',  $att['name_en']);
         Page::create($attPage);
         Sub::create($att);
         return back();
@@ -55,18 +57,20 @@ class SubController extends Controller
         $page = Page::where('slug', $slug);
         $att = $request->validate([
             'category_id' => 'required',
-            'name' => 'required'
+            'name_en' => 'required',
+            'name_de' => 'required',
+            'name_fr' => 'required'
             
            
         ]);
         $attPage = $request->validate([
-            'name' => 'required'
+            'name_en' => 'required'
             
            
         ]);
         
-        $att['slug'] = str_replace(' ', '-',  $att['name']);
-        $attPage['slug'] = str_replace(' ', '-',  $att['name']);
+        $att['slug'] = str_replace(' ', '-',  $att['name_en']);
+        $attPage['slug'] = str_replace(' ', '-',  $att['name_en']);
         $page->update($attPage);
         $sub->update($att);
 

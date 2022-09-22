@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('subs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
-            $table->string('name');
+            $table->string('name_en')->unique();
+            $table->string('name_de')->unique();
+            $table->string('name_fr')->unique();
             $table->string('slug')->unique();
             $table->timestamps();
         });

@@ -27,10 +27,26 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="exampleInputText1">Sub category</label>
-                                <input value="{{ $sub->name }}" type="text" class="form-control"
-                                    id="exampleInputText1" name="name">
-                                @error('title')
+                                <label for="name_en">Sub category (en)</label>
+                                <input value="{{ $sub->name_en }}" type="text" class="form-control"
+                                    id="name_en" name="name_en">
+                                @error('name_en')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="name_de">Sub category (de)</label>
+                                <input value="{{ $sub->name_de }}" type="text" class="form-control"
+                                    id="name_de" name="name_de">
+                                @error('name_de')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="name_fr">Sub category (fr)</label>
+                                <input value="{{ $sub->name_fr }}" type="text" class="form-control"
+                                    id="name_fr" name="name_fr">
+                                @error('name_fr')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>

@@ -8,35 +8,80 @@
                         <form action="{{ route('trips.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="title">Titre</label>
-                                <input value="{{ old('title') }}" type="text" class="form-control"
-                                    id="title" name="title">
-                                @error('title')
+                                <label for="title_en">Titre(en)</label>
+                                <input value="{{ old('title_en') }}" type="text" class="form-control"
+                                    id="title_en" name="title_en">
+                                @error('title_en')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label for="title_de">Titre(de)</label>
+                                <input value="{{ old('title_de') }}" type="text" class="form-control"
+                                    id="title_de" name="title_de">
+                                @error('title_de')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="title_fr">Titre(fr)</label>
+                                <input value="{{ old('title_fr') }}" type="text" class="form-control"
+                                    id="title_fr" name="title_fr">
+                                @error('title_fr')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
                                 <label>Categorie</label>
                                 <select class="js-example-basic-single w-100" name="sub_id" data-width="100%">
                                     @foreach ($sub_categories as $sub_category)
-                                    <option value="{{ $sub_category->id }}">{{ $sub_category->name }}</option>
+                                    <option value="{{ $sub_category->id }}">{{ $sub_category->name_en }}</option>
                                     @endforeach
 
 
                                 </select>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="overview">Description</label>
-                                <input value="{{ old('overview') }}" type="text" class="form-control"
-                                id="overview" name="overview">
-                                @error('overview')
+                                <label for="overview">Description(en)</label>
+                                <input value="{{ old('overview_en') }}" type="text" class="form-control"
+                                id="overview_en" name="overview_en">
+                                @error('overview_en')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="editor">Content</label>
-                                <textarea name="content" id="editor" cols="30" rows="10">{{ old('content') }}</textarea>
+                                <label for="overview_de">Description(de)</label>
+                                <input value="{{ old('overview_de') }}" type="text" class="form-control"
+                                id="overview_de" name="overview_de">
+                                @error('overview_de')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
                             </div>
+                            <div class="form-group">
+                                <label for="overview_fr">Description(fr)</label>
+                                <input value="{{ old('overview_fr') }}" type="text" class="form-control"
+                                id="overview_fr" name="overview_fr">
+                                @error('overview_fr')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="editor_en">Content(en)</label>
+                                <textarea name="content_en" id="editor_en" cols="30" rows="10">{{ old('content_en') }}</textarea>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="editor_de">Content(de)</label>
+                                <textarea name="content_de" id="editor_de" cols="30" rows="10">{{ old('content_de') }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="editor_fr">Content(fr)</label>
+                                <textarea name="content_fr" id="editor_fr" cols="30" rows="10">{{ old('content_fr') }}</textarea>
+                            </div>
+
                             <div class="form-group">
                                 <label for="price">Prix</label>
                                 <input value="{{ old('price') }}" type="number" class="form-control" id="price"
@@ -62,13 +107,30 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="tags">Les Mois</label>
-                                <input name="months" id="tags"
+                                <label >Months</label>
+                                <input name="months_en" id="tags_en"
                                     value="January, February, March, April, May, June, July, August, September, October, November, December" />
-                                @error('mounths')
+                                @error('months_en')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <label >Monate</label>
+                                <input name="months_de" id="tags_de"
+                                    value="Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember" />
+                                @error('months_de')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label >Les Mois</label>
+                                <input name="months_fr" id="tags_fr"
+                                    value="Janvier, Fevrier, Mars, Avril, Mai, Juin, Juillet, Aout, Septembre, Octobre, Novembre, Decembre" />
+                                @error('months_fr')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+
                             <div class="form-group">
                                 <label for="myDropify">Thumbnail</label>
                                 <input name="thumbnail" type="file" id="myDropify" class="border" />
@@ -110,13 +172,13 @@
                                     @foreach ($trips as $trip)
 
                                     <tr>
-                                        <td>{{ $trip->title }}</td>
-                                        <td>{{ $trip->sub->name }}</td>
+                                        <td>{{ $trip->title_en }}</td>
+                                        <td>{{ $trip->sub->name_en }}</td>
                                         <td><img src="{{asset('storage/' . $trip->thumbnail) }}" alt="trip_image"></td>
                                         <td>{{ $trip->price }}</td>
                                         <td>{{ $trip->days }}</td>
                                         <td>{{ $trip->min_age }}</td>
-                                        <td>{{ $trip->months }}</td>
+                                        <td>{{ $trip->months_en }}</td>
                                         <td>
                                             <a class="btn btn-danger btn-icon-text mb-2  mt-2"
                                                 href="{{ route('trips.delete', ['id'=>$trip->id]) }}">Supprimer</a>

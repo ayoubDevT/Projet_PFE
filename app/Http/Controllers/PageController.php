@@ -11,7 +11,9 @@ class PageController extends Controller
     {
         $page1 = Page::find($page);
         $att = $request->validate([
-            'body' =>'required',
+            'body_en' =>'required',
+            'body_de' =>'',
+            'body_fr' =>''
         ]);
         $page1->update($att);
         return back();

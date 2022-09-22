@@ -66,7 +66,7 @@
                         </svg>
 
                         <pre>
-                            <p style="font-weight: 600">{{ $trip->months }}</p>
+                            <p style="font-weight: 600">{{ $trip->months_en }}</p>
                         </pre>
                     </div>
                 </div>

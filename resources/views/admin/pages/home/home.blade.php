@@ -78,11 +78,11 @@
 
                   <tr>
                     <td>{{ $trip->id }}</td>
-                    <td>{{ $trip->title }}</td>
+                    <td>{{ $trip->title_en }}</td>
                     <td><img src="{{asset('storage/' . $trip->thumbnail) }}" alt="trip_image"></td>
                     <td>{{ $trip->days }}</td>
                     <td>{{ $trip->min_age }}</td>
-                    <td>{{ $trip->months }}</td>
+                    <td>{{ $trip->months_en }}</td>
                     <td>
                       <div class="form-check">
                         <label class="form-check-label">

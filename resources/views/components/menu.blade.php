@@ -8,11 +8,12 @@
                 <div class="row">
                     <div class="col-12 d-inline-flex " style=" padding-left: 150px;">
                         <p><i class="fas fa-language"></i></p>
-                        <p class="px-3"><a href="" style="font-weight: bolder;">DE</a>
+                        <p class="px-3"><a class="{{ Session::get('lang')=='de'? 'itlabspro-active':'' }}" href="{{ route('client.homeLang', ['lang'=>'de']) }}" style="font-weight: bolder;">DE</a>
                             -
-                            <a class="itlabspro-active" href="" style="font-weight: bolder;">EN</a>
+                            <a class="{{ Session::get('lang')=='en'? 'itlabspro-active':'' }}" href="{{ route('client.homeLang', ['lang'=>'en']) }}" style="font-weight: bolder;">EN</a>
                             -
-                            <a href="" style="font-weight: bolder;">FR</a>
+                            <a class="{{ Session::get('lang')=='fr'? 'itlabspro-active':'' }}" href="{{ route('client.homeLang', ['lang'=>'fr']) }}" style="font-weight: bolder;">FR</a>
+                            
                         </p>
 
                         <p class="px-3"><i class="far fa-envelope"></i>
@@ -42,14 +43,14 @@
                     <div class="col-12 ">
                         <ul class="d-inline-flex" style="max-width: 100%;">
                             <li class="px-2">
-                                <a class="{{ (request()->is('/')) ? 'itlabspro-active' : '' }}"
-                                    href="{{ route('client.home') }}">
+                                <a class="{{ (request()->is('/')) ? 'itlabspro-active' : ((request()->is('language?lang='.Session::get('lang'))) ? 'itlabspro-active' : '') }}"
+                                    href="{{ route('client.homeLang', ['lang'=>Session::get('lang')]) }}">
                                     HOME
                                 </a>
                             </li>
                             <li class="px-2">
-                                <a class="{{ (request()->is('about')) ? 'itlabspro-active' : '' }}"
-                                    href="{{ route('client.about') }}">
+                                <a class="{{ (request()->is(Session::get('lang').'/about')) ? 'itlabspro-active' : '' }}"
+                                    href="{{ route('client.about', ['lang'=>Session::get('lang')]) }}">
                                     ABOUT US
                                 </a>
                             </li>
@@ -60,7 +61,7 @@
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
                                         @foreach ($categoriesPage as $categoryPage)
                                         @if ($categoryPage->category->name == 'Cultural Encounters')
-                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase {{ request()->is('trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name }}</a>
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug, 'lang'=>Session::get('lang')]) }}" class="dropdown-item  text-uppercase {{ request()->is(Session::get('lang').'/trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name_en }}</a>
                                         @endif
                   
                                         @endforeach
@@ -74,7 +75,7 @@
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
                                         @foreach ($categoriesPage as $categoryPage)
                                         @if ($categoryPage->category->name == 'Treks & Adventures')
-                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase {{ request()->is('trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name }}</a>
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug, 'lang'=>Session::get('lang')]) }}" class="dropdown-item  text-uppercase {{ request()->is(Session::get('lang').'/trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name_en }}</a>
                                         @endif
                   
                                         @endforeach
@@ -89,7 +90,7 @@
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
                                         @foreach ($categoriesPage as $categoryPage)
                                         @if ($categoryPage->category->name == 'Luxury & MICE')
-                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase {{ request()->is('trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name }}</a>
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug, 'lang'=>Session::get('lang')]) }}" class="dropdown-item  text-uppercase {{ request()->is(Session::get('lang').'/trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name_en }}</a>
                                         @endif
                   
                                         @endforeach
@@ -103,7 +104,7 @@
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
                                         @foreach ($categoriesPage as $categoryPage)
                                         @if ($categoryPage->category->name == 'Wellness')
-                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug]) }}" class="dropdown-item  text-uppercase {{ request()->is('trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name }}</a>
+                                        <a href="{{ route('client.tripsCat', ['slug' => $categoryPage->slug, 'lang'=>Session::get('lang')]) }}" class="dropdown-item  text-uppercase {{ request()->is(Session::get('lang').'/trips/'.$categoryPage->slug)  ? 'itlabspro-active' : '' }}">{{ $categoryPage->name_en }}</a>
                                         @endif
                   
                                         @endforeach
@@ -112,35 +113,35 @@
                             </li>
 
                             <li class="px-2">
-                                <a class="{{ (request()->is('our_social_projects')) ? 'itlabspro-active' : '' }}"
-                                    href="{{ route('client.osp') }}">
+                                <a class="{{ (request()->is(Session::get('lang').'/our_social_projects')) ? 'itlabspro-active' : '' }}"
+                                    href="{{ route('client.osp', ['lang'=>Session::get('lang')]) }}">
                                     OUR SOCIAL PROJECTS
                                 </a>
                             </li>
                             <li class="px-2">
                                 <div class="nav-item dropdown">
                                     <a href="#"
-                                        class=" dropdown-toggle {{ (request()->is('prepare_your_travel_to_morocco'))||(request()->is('general_advices'))||(request()->is('faqs'))||(request()->is('videos')) ? 'itlabspro-active' : '' }}"
+                                        class=" dropdown-toggle {{ (request()->is(Session::get('lang').'/prepare_your_travel_to_morocco'))||(request()->is(Session::get('lang').'/general_advices'))||(request()->is(Session::get('lang').'/faqs'))||(request()->is(Session::get('lang').'/videos')) ? 'itlabspro-active' : '' }}"
                                         data-toggle="dropdown">MORE</a>
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
-                                        <a href="{{ route('client.prepareTravel') }}"
-                                            class="dropdown-item  {{ (request()->is('prepare_your_travel_to_morocco')) ? 'itlabspro-active' : '' }}">PREPARE
+                                        <a href="{{ route('client.prepareTravel', ['lang'=>Session::get('lang')]) }}"
+                                            class="dropdown-item  {{ (request()->is(Session::get('lang').'/prepare_your_travel_to_morocco')) ? 'itlabspro-active' : '' }}">PREPARE
                                             YOUR TRAVEL TO
                                             MOROCCO</a>
-                                        <a href="{{ route('client.general_a') }}"
-                                            class="dropdown-item  text-uppercase {{ (request()->is('general_advices')) ? 'itlabspro-active' : '' }}">GENERAL
+                                        <a href="{{ route('client.general_a', ['lang'=>Session::get('lang')]) }}"
+                                            class="dropdown-item  text-uppercase {{ (request()->is(Session::get('lang').'/general_advices')) ? 'itlabspro-active' : '' }}">GENERAL
                                             ADVICES</a>
-                                        <a href="{{ route('client.faqs') }}"
-                                            class="dropdown-item  text-uppercase {{ (request()->is('faqs')) ? 'itlabspro-active' : '' }}">FAQS</a>
-                                        <a href="{{ route('client.videos') }}"
-                                            class="dropdown-item  text-uppercase {{ (request()->is('videos')) ? 'itlabspro-active' : '' }}">VIDEOS</a>
+                                        <a href="{{ route('client.faqs', ['lang'=>Session::get('lang')]) }}"
+                                            class="dropdown-item  text-uppercase {{ (request()->is(Session::get('lang').'/faqs')) ? 'itlabspro-active' : '' }}">FAQS</a>
+                                        <a href="{{ route('client.videos', ['lang'=>Session::get('lang')]) }}"
+                                            class="dropdown-item  text-uppercase {{ (request()->is(Session::get('lang').'/videos')) ? 'itlabspro-active' : '' }}">VIDEOS</a>
 
                                     </div>
                                 </div>
                             </li>
                             <li class="px-2">
-                                <a class="{{ (request()->is('contact')) ? 'itlabspro-active' : '' }}"
-                                    href="{{ route('client.contact') }}">
+                                <a class="{{ (request()->is(Session::get('lang').'/contact')) ? 'itlabspro-active' : '' }}"
+                                    href="{{ route('client.contact', ['lang'=>Session::get('lang')]) }}">
                                     CONTACT US
                                 </a>
                             </li>

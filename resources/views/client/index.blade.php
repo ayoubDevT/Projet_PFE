@@ -132,7 +132,7 @@
                             <p class="ml-5 trip-price">$ {{ $trip->price }}</p>
                         </div>
                         <div class="col-8 ">
-                            <button id="more" onclick="location.href = '{{ route('client.trip', ['id'=>$trip->id]) }}';">Read more ></button>
+                            <button id="more" onclick="location.href = '{{ route('client.trip', ['id'=>$trip->id, 'lang'=>Session::get('lang')]) }}';">Read more ></button>
                         </div>
 
                     </div>

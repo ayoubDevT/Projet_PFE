@@ -49,14 +49,28 @@
                 <form action="{{ route('page.store' , ['page'=>$page->id])}}" method="post">
                   @csrf
                   @method('PUT')
-                  <textarea name="body" id="editor" cols="30" rows="10"></textarea>
+                  <div class="p-3">
+                    <h6 class="card-title">Modifier le texte de la page (en)</h6>
+                    <textarea name="body_en" id="editor_en" cols="30"
+                      rows="10">{!!  $page->body_en == null ? 'no code' : $page->body_en !!}</textarea>
+                  </div>
+                  <div class="p-3">
+                    <h6 class="card-title">Modifier le texte de la page (de)</h6>
+                    <textarea name="body_de" id="editor_de" cols="30"
+                      rows="10">{!!  $page->body_de == null ? 'no code' : $page->body_de !!}</textarea>
+                  </div>
+                  <div class="p-3">
+                    <h6 class="card-title">Modifier le texte de la page (fr)</h6>
+                    <textarea name="body_fr" id="editor_fr" cols="30"
+                      rows="10">{!!  $page->body_fr == null ? 'no code' : $page->body_fr !!}</textarea>
+                  </div>
                   <input type="submit" value="submit" class="btn btn-primary btn-icon-text mb-2  mt-2">
                 </form>
               </div>
               <hr>
-              <div style="border: 1px solid;" class="p-3">
-                {!! $page->body == null ? 'no code' : $page->body !!}
-              </div>
+              <!--<div style="border: 1px solid;" class="p-3">
+                  {!!  $page->body_en == null ? 'no code' : $page->body_en !!}
+                </div>-->
   
             </div>
           </div>

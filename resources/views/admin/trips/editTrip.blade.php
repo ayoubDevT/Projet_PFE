@@ -12,13 +12,30 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label for="title">Titre</label>
-                                <input value="{{ $trip->title }}" type="text" class="form-control"
-                                    id="title" name="title">
-                                @error('title')
+                                <label for="title_en">Titre(en)</label>
+                                <input value="{{ $trip->title_en }}" type="text" class="form-control"
+                                    id="title_en" name="title_en">
+                                @error('title_en')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <label for="title_de">Titre(de)</label>
+                                <input value="{{ $trip->title_de }}" type="text" class="form-control"
+                                    id="title_de" name="title_de">
+                                @error('title_de')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="title_fr">Titre(fr)</label>
+                                <input value="{{ $trip->title_fr }}" type="text" class="form-control"
+                                    id="title_fr" name="title_fr">
+                                @error('title_fr')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+
                             <div class="form-group">
                                 <label>Categorie</label>
                                 <select class="js-example-basic-single w-100" name="sub_id" data-width="100%">
@@ -26,27 +43,59 @@
 
                                     <option value="{{ $sub_category->id }}" {{ $select=($trip->sub_category_id == $sub_category->id)
                                         ?
-                                        'selected' : '' }}>{{ $sub_category->name }}</option>
+                                        'selected' : '' }}>{{ $sub_category->name_en }}</option>
                                     @endforeach
 
 
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="overview">Description</label>
-                                <input value="{{ $trip->title }}" type="text" class="form-control"
-                                    id="overview" name="overview">
-                                @error('overview')
+                                <label for="overview_en">Description(en)</label>
+                                <input value="{{ $trip->overview_en }}" type="text" class="form-control"
+                                    id="overview_en" name="overview_en">
+                                @error('overview_en')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="editor">Content</label>
-                                <textarea name="content" id="editor" cols="30" rows="10">{!! $trip->content !!}</textarea>
-                                @error('content')
+                                <label for="overview_de">Description(de)</label>
+                                <input value="{{ $trip->overview_de }}" type="text" class="form-control"
+                                    id="overview_de" name="overview_de">
+                                @error('overview_de')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <label for="overview_fr">Description(fr)</label>
+                                <input value="{{ $trip->overview_fr }}" type="text" class="form-control"
+                                    id="overview_fr" name="overview_fr">
+                                @error('overview_fr')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="editor_en">Content(en)</label>
+                                <textarea name="content_en" id="editor_en" cols="30" rows="10">{!! $trip->content_en !!}</textarea>
+                                @error('content_en')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="editor_de">Content(de)</label>
+                                <textarea name="content_de" id="editor_de" cols="30" rows="10">{!! $trip->content_de !!}</textarea>
+                                @error('content_de')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="editor_fr">Content(fr)</label>
+                                <textarea name="content_fr" id="editor_fr" cols="30" rows="10">{!! $trip->content_fr !!}</textarea>
+                                @error('content_fr')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+
                             <div class="form-group">
                                 <label for="price">Prix</label>
                                 <input value="{{ $trip->price }}" type="number" class="form-control" id="price"
@@ -72,13 +121,30 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="tags">Les mois</label>
-                                <input value="{{ $trip->months }}" name="months" id="tags"
-                                    value="January, February, March, April, May, June, July, August, September, October, November, December" />
-                                @error('months')
+                                <label for="tags_en">Months</label>
+                                <input name="months_en" id="tags_en"
+                                    value="{{ $trip->months_en }}" />
+                                @error('months_en')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <label for="tags_de">Monate</label>
+                                <input name="months_de" id="tags_de"
+                                    value="{{ $trip->months_de }}" />
+                                @error('months_de')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="tags_fr">Les mois</label>
+                                <input name="months_fr" id="tags_fr"
+                                    value="{{ $trip->months_fr }}" />
+                                @error('months_fr')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+
                             <div class="form-group">
                                 <label for="myDropify">Thumbnail</label><br>
                                 <label for="old">Ancienne image</label>

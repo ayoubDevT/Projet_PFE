@@ -16,17 +16,18 @@ use Illuminate\Support\Facades\Route;
 
     //site de client
     Route::get('/', [App\Http\Controllers\SiteController::class, 'index'])->name('client.home');
-    Route::get('/about', [App\Http\Controllers\SiteController::class, 'about'])->name('client.about');
-    Route::get('/contact', [App\Http\Controllers\SiteController::class, 'contact'])->name('client.contact');
-    Route::get('/faqs', [App\Http\Controllers\SiteController::class, 'faqs'])->name('client.faqs');
-    Route::get('/general_advices', [App\Http\Controllers\SiteController::class, 'general_a'])->name('client.general_a');
-    Route::get('/our_social_projects', [App\Http\Controllers\SiteController::class, 'osp'])->name('client.osp');
-    Route::get('/prepare_your_travel_to_morocco', [App\Http\Controllers\SiteController::class, 'prepareTravel'])->name('client.prepareTravel');
-    Route::get('/videos', [App\Http\Controllers\SiteController::class, 'videos'])->name('client.videos');
-    Route::get('/trips/{slug}', [App\Http\Controllers\SiteController::class, 'tripsCat'])->name('client.tripsCat');
-    Route::get('/trip/{id}', [App\Http\Controllers\SiteController::class, 'trip'])->name('client.trip');
-    Route::post('store_booking', [App\Http\Controllers\BookingController::class, 'store'])->name('client.booking.store');
-    Route::post('store_message', [App\Http\Controllers\MessageController::class, 'store'])->name('client.message.store');
+    Route::get('/language', [App\Http\Controllers\SiteController::class, 'indexLang'])->name('client.homeLang');
+    Route::get('/{lang}/about', [App\Http\Controllers\SiteController::class, 'about'])->name('client.about');
+    Route::get('/{lang}/contact', [App\Http\Controllers\SiteController::class, 'contact'])->name('client.contact');
+    Route::get('/{lang}/faqs', [App\Http\Controllers\SiteController::class, 'faqs'])->name('client.faqs');
+    Route::get('/{lang}/general_advices', [App\Http\Controllers\SiteController::class, 'general_a'])->name('client.general_a');
+    Route::get('/{lang}/our_social_projects', [App\Http\Controllers\SiteController::class, 'osp'])->name('client.osp');
+    Route::get('/{lang}/prepare_your_travel_to_morocco', [App\Http\Controllers\SiteController::class, 'prepareTravel'])->name('client.prepareTravel');
+    Route::get('/{lang}/videos', [App\Http\Controllers\SiteController::class, 'videos'])->name('client.videos');
+    Route::get('{lang}/trips/{slug}', [App\Http\Controllers\SiteController::class, 'tripsCat'])->name('client.tripsCat');
+    Route::get('/trip/{lang}/{id}', [App\Http\Controllers\SiteController::class, 'trip'])->name('client.trip');
+    Route::post('/store_booking', [App\Http\Controllers\BookingController::class, 'store'])->name('client.booking.store');
+    Route::post('/store_message', [App\Http\Controllers\MessageController::class, 'store'])->name('client.message.store');
 
 //admin
 Route::middleware([
@@ -36,7 +37,7 @@ Route::middleware([
 ])->group(function () {
     
     //home
-    Route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('store_homeimg/{page}', [App\Http\Controllers\HomeController::class, 'store'])->name('homeimg.store');
     Route::get('delete_homeimg', [App\Http\Controllers\HomeController::class, 'delete'])->name('homeimg.delete');
     Route::put('edit_homeimg', [App\Http\Controllers\HomeController::class, 'edit'])->name('homeimg.edit');

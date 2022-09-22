@@ -12,6 +12,10 @@ class Sub extends Model
     protected $guarded = [];
     
 
+    public static function rules()
+    {
+        return ['name_en' => 'required|unique:subs'];
+    }
     public function trips()
     {
         return $this->hasMany(Trip::class);

@@ -16,15 +16,23 @@ return new class extends Migration
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sub_id')->constrained()->cascadeOnDelete();
-            $table->string('title');
+            $table->string('title_en');
+            $table->string('title_de')->nullable();
+            $table->string('title_fr')->nullable();
             $table->integer('show');
             $table->string('thumbnail')->nullable();
-            $table->text('overview');
+            $table->text('overview_en');
+            $table->text('overview_de')->nullable();
+            $table->text('overview_fr')->nullable();
             $table->float('price');
-            $table->text('content');
+            $table->text('content_en');
+            $table->text('content_de')->nullable();
+            $table->text('content_fr')->nullable();
             $table->integer('days');
             $table->integer('min_age');
-            $table->string('months');
+            $table->string('months_en');
+            $table->string('months_de')->nullable();
+            $table->string('months_fr')->nullable();
             $table->timestamps();
         });
     }

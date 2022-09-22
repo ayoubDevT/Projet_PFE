@@ -79,7 +79,7 @@ License: You must have a valid license purchased only from above link or https:/
                 @foreach ($categoriesPage as $categoryPage)
                 @if ($categoryPage->category->name == 'Cultural Encounters')
                   <li class="nav-item">
-                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name_en }}</a>
                 </li>
                 @endif
                   
@@ -100,7 +100,7 @@ License: You must have a valid license purchased only from above link or https:/
                 @foreach ($categoriesPage as $categoryPage)
                 @if ($categoryPage->category->name == 'Treks & Adventures')
                   <li class="nav-item">
-                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name_en }}</a>
                 </li>
                 @endif
                   
@@ -120,7 +120,7 @@ License: You must have a valid license purchased only from above link or https:/
                 @foreach ($categoriesPage as $categoryPage)
                 @if ($categoryPage->category->name == 'Luxury & MICE')
                   <li class="nav-item">
-                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name }}</a>
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name_en }}</a>
                 </li>
                 @endif
                   
@@ -140,7 +140,7 @@ License: You must have a valid license purchased only from above link or https:/
                 @foreach ($categoriesPage as $categoryPage)
                 @if ($categoryPage->category->name == 'Wellness')
                   <li class="nav-item ">
-                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link mw-100 text-lowercase">{{ $categoryPage->name }}</a>
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link mw-100 text-lowercase">{{ $categoryPage->name_en }}</a>
                 </li>
                 @endif
                   
@@ -650,7 +650,15 @@ License: You must have a valid license purchased only from above link or https:/
   <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
   <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>
   <script>
-    CKEDITOR.replace( 'editor' , {
+    CKEDITOR.replace( 'editor_en' , {
+      filebrowserUploadUrl:"{{ route('ck.upload', ['_token'=>csrf_token()]) }}",
+      filebrowserUploadMethod:"form"
+    });
+    CKEDITOR.replace( 'editor_de' , {
+      filebrowserUploadUrl:"{{ route('ck.upload', ['_token'=>csrf_token()]) }}",
+      filebrowserUploadMethod:"form"
+    });
+    CKEDITOR.replace( 'editor_fr' , {
       filebrowserUploadUrl:"{{ route('ck.upload', ['_token'=>csrf_token()]) }}",
       filebrowserUploadMethod:"form"
     });

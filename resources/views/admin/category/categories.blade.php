@@ -19,10 +19,28 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputText1">Sub-Category</label>
-                                <input value="{{ old('name') }}" type="text" class="form-control" id="exampleInputText1"
-                                    name="name">
-                                @error('name')
+                                <label for="exampleInputText1">Sub-Category (en)</label>
+                                <input value="{{ old('name_en') }}" type="text" class="form-control" id="exampleInputText1"
+                                    name="name_en">
+                                @error('name_en')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputText1">Sub-Category (de)</label>
+                                <input value="{{ old('name_de') }}" type="text" class="form-control" id="exampleInputText1"
+                                    name="name_de">
+                                @error('name_de')
+                                <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputText1">Sub-Category (fr)</label>
+                                <input value="{{ old('name_fr') }}" type="text" class="form-control" id="exampleInputText1"
+                                    name="name_fr">
+                                @error('name_fr')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
@@ -56,7 +74,7 @@
                                     @foreach ($subcategories as $subcategory)
 
                                     <tr>
-                                        <td>{{ $subcategory->name }}</td>
+                                        <td>{{ $subcategory->name_en }}</td>
                                         <td>{{ $subcategory->category->name }}</td>
 
                                         <td>

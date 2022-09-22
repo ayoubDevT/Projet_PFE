@@ -26,14 +26,22 @@ class TripController extends Controller
        
         $att = $request->validate([
             'sub_id' => 'required',
-            'title' => 'required',
+            'title_en' => 'required',
+            'title_de' => 'required',
+            'title_fr' => 'required',
             'thumbnail' => 'required|image',
-            'overview' => 'required',
-            'content' => 'required',
+            'overview_en' => 'required',
+            'overview_de' => 'required',
+            'overview_fr' => 'required',
+            'content_en' => '',
+            'content_de' => '',
+            'content_fr' => '',
             'price' => 'required|numeric',
             'days' => 'required|numeric',
             'min_age' => 'required|numeric|min:1|max:99',
-            'months' => 'required'
+            'months_en' => 'required',
+            'months_de' => 'required',
+            'months_fr' => 'required'
            
         ]);
         
@@ -56,14 +64,22 @@ class TripController extends Controller
         $trip = Trip::find($id);
         $att = $request->validate([
             'sub_id' => 'required',
-            'title' => 'required',
+            'title_en' => 'required',
+            'title_de' => 'required',
+            'title_fr' => 'required',
             'thumbnail' => 'image',
-            'overview' => 'required',
-            'content' => 'required',
+            'overview_en' => 'required',
+            'overview_de' => 'required',
+            'overview_fr' => 'required',
+            'content_en' => '',
+            'content_de' => '',
+            'content_fr' => '',
             'price' => 'required|numeric',
             'days' => 'required|numeric',
             'min_age' => 'required|numeric|min:1|max:99',
-            'months' => 'required'
+            'months_en' => 'required',
+            'months_de' => 'required',
+            'months_fr' => 'required'
            
         ]);
         
