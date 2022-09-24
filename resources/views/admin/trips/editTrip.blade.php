@@ -76,21 +76,21 @@
 
                             <div class="form-group">
                                 <label for="editor_en">Content(en)</label>
-                                <textarea name="content_en" id="editor_en" cols="30" rows="10">{!! $trip->content_en !!}</textarea>
+                                <textarea name="content_en" id="editor_en" cols="30" rows="10">{!! $trip->content_en == null ? 'no code' : $trip->content_en !!}</textarea>
                                 @error('content_en')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="editor_de">Content(de)</label>
-                                <textarea name="content_de" id="editor_de" cols="30" rows="10">{!! $trip->content_de !!}</textarea>
+                                <textarea name="content_de" id="editor_de" cols="30" rows="10">{!! $trip->content_de == null ? 'no code' : $trip->content_de !!}</textarea>
                                 @error('content_de')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="editor_fr">Content(fr)</label>
-                                <textarea name="content_fr" id="editor_fr" cols="30" rows="10">{!! $trip->content_fr !!}</textarea>
+                                <textarea name="content_fr" id="editor_fr" cols="30" rows="10">{!! $trip->content_fr == null ? 'no code' : $trip->content_fr !!}</textarea>
                                 @error('content_fr')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
                                 @enderror
