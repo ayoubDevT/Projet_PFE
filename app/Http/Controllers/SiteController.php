@@ -13,16 +13,21 @@ class SiteController extends Controller
 {
     public function index()
     {   
-        session(['lang' => 'en']);
-        $page = Page::where('slug','home')->first();
-        $images = Image::where('page_id' , $page->id)->get();
-        $trips = Trip::where('show', 1)->get();
-        return view('client.index', ['page'=>$page,'images'=>$images,'trips'=>$trips]);
+        $lang = request()->session()->get('lang') ?? 'en';
+        
+        return redirect(route('client.homeLang', ['lang'=>$lang]));
     }
 
-    public function indexLang()
+    public function indexLang($lang)
     {   
-        session(['lang' => request()->lang]);
+        if ($lang == 'en' || $lang == 'de' || $lang == 'fr') {
+            session(['lang' => $lang]);
+        }
+
+        else {
+            session(['lang' => 'en']);
+        }
+        
         $page = Page::where('slug','home')->first();
         $images = Image::where('page_id' , $page->id)->get();
         $trips = Trip::where('show', 1)->get();
@@ -74,6 +79,9 @@ class SiteController extends Controller
     public function tripsCat($lang,$slug)
     {
         $page = Page::where('slug',$slug)->first();
+        if (is_null($page)) {
+            abort(404);
+        }
         $image = Image::where('page_id' , $page->id)->first();
         $sub = Sub::where('slug' , $slug)->first();
         $trips = Trip::where('sub_id', $sub->id)->get();
@@ -85,6 +93,9 @@ class SiteController extends Controller
     public function trip($lang,$id)
     {
         $trip = Trip::find($id);
+        if (is_null($trip)) {
+            abort(404);
+        }
         /*$trips = Trip::whereHas(['category' => function ($query) {
             $query->where('slug', $slug);
         }])->get();*/

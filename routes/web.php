@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
     //site de client
     Route::get('/', [App\Http\Controllers\SiteController::class, 'index'])->name('client.home');
-    Route::get('/language', [App\Http\Controllers\SiteController::class, 'indexLang'])->name('client.homeLang');
+    Route::get('/home/{lang}', [App\Http\Controllers\SiteController::class, 'indexLang'])->name('client.homeLang');
     Route::get('/{lang}/about', [App\Http\Controllers\SiteController::class, 'about'])->name('client.about');
     Route::get('/{lang}/contact', [App\Http\Controllers\SiteController::class, 'contact'])->name('client.contact');
     Route::get('/{lang}/faqs', [App\Http\Controllers\SiteController::class, 'faqs'])->name('client.faqs');

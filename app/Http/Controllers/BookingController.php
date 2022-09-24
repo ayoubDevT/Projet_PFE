@@ -29,6 +29,7 @@ class BookingController extends Controller
            
         ]);
         
+        $att['trip_id'] = request()->trip;
         
         Booking::create($att);
         return back();

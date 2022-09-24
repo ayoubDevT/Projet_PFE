@@ -15,6 +15,7 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Phone number</th>
+                                        <th>Trip</th>
                                         <th>Number of persons</th>
                                         <th>Arrival date</th>
                                         <th>Departure date</th>
@@ -28,6 +29,7 @@
                                         <td>{{ $booking->name }}</td>
                                         <td>{{ $booking->email }}</td>
                                         <td>{{ $booking->phone }}</td>
+                                        <td>{{ $booking->trip->title_en }}</td>
                                         <td>{{ $booking->person }}</td>
                                         <td>{{ $booking->arrival }}</td>
                                         <td>{{ $booking->departure }}</td>
@@ -71,6 +73,9 @@
                         <hr>
                         <p>Phone number :</p>
                         <p class="px-3">{{ $booking->phone }}</p>
+                        <hr>
+                        <p>Trip :</p>
+                        <p class="px-3">{{ $booking->trip->title_en }}</p>
                         <hr>
                         <p>Number of persons :</p>
                         <p class="px-3">{{ $booking->person }}</p>

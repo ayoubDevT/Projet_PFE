@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-            <form action="{{ route('client.booking.store') }}" method="post">
+            <form action="{{ route('client.booking.store', ['trip'=>$trip->id]) }}" method="post">
                 @csrf
                 <h5 class="trip-h5">Booking</h5>
                 <hr id="gold">

@@ -55,6 +55,9 @@ class TripController extends Controller
     public function update($id)
     {
         $trip = Trip::find($id);
+        if (is_null($trip)) {
+            abort(404);
+        }
         $sub_categories = Sub::all();
         return view('admin.trips.editTrip', ['trip' => $trip , 'sub_categories' => $sub_categories]);
     }

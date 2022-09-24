@@ -46,7 +46,9 @@ class SubController extends Controller
     public function update($id)
     {
         $sub = Sub::find($id);
-        
+        if (is_null($sub)) {
+            abort(404);
+        }
         $categories = Category::all();
         return view('admin.category.editCat', ['sub' => $sub , 'categories' => $categories]);
     }
