@@ -20,6 +20,14 @@ class SiteController extends Controller
 
     public function indexLang($lang)
     {   
+                
+        $page = Page::where('slug','home')->first();
+        $images = Image::where('page_id' , $page->id)->get();
+        $trips = Trip::where('show', 1)->get();
+        return view('client.index', ['page'=>$page,'images'=>$images,'trips'=>$trips]);
+    }
+    public function trans($lang)
+    {   
         if ($lang == 'en' || $lang == 'de' || $lang == 'fr') {
             session(['lang' => $lang]);
         }
@@ -28,10 +36,8 @@ class SiteController extends Controller
             session(['lang' => 'en']);
         }
         
-        $page = Page::where('slug','home')->first();
-        $images = Image::where('page_id' , $page->id)->get();
-        $trips = Trip::where('show', 1)->get();
-        return view('client.index', ['page'=>$page,'images'=>$images,'trips'=>$trips]);
+        
+        return back();
     }
 
     public function about($lang)
@@ -76,7 +82,7 @@ class SiteController extends Controller
         $image = Image::where('page_id' , $page->id)->first();
         return view('client.videos', ['page'=>$page,'image'=>$image]);
     }
-    public function tripsCat($lang,$slug)
+    public function tripsCat($slug,$lang)
     {
         $page = Page::where('slug',$slug)->first();
         if (is_null($page)) {

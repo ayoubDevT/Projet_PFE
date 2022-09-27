@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Booking as MailBooking;
 use App\Models\Booking;
+use App\Models\Trip;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -16,7 +19,7 @@ class BookingController extends Controller
     public function store(Request $request)
     {
        
-       
+       $trip = Trip::find(request()->trip);
         $att = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -28,7 +31,22 @@ class BookingController extends Controller
             
            
         ]);
+
+        $mailData = [
+            'name' => $att['name'],
+            'email' => $att['email'],
+            'phone' => $att['phone'],
+            'trip' => $trip->title_en,
+            'person' => $att['person'],
+            'arrival' => $att['arrival'],
+            'departure' => $att['departure'],
+            'message' => $att['message'],
+            
+           
+        ];
         
+        Mail::to('yafouzeayoub@gmail.com')->send(new \App\Mail\Booking($mailData, $att['email']));
+
         $att['trip_id'] = request()->trip;
         
         Booking::create($att);

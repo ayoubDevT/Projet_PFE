@@ -29,19 +29,19 @@ License: You must have a valid license purchased only from above link or https:/
   <link rel="stylesheet" href="{{ asset('assets/vendors/prismjs/themes/prism.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendors/jquery-tags-input/jquery.tagsinput.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendors/select2/select2.min.css') }}">
-  
+
   <!-- end plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{{ asset('assets/fonts/feather-font/css/iconfont.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
   <!-- endinject -->
   <!-- Layout styles -->
-  <link rel="stylesheet" id="csss" href="{{ asset('assets/css/demo_1/style.css') }}">
+  <link rel="stylesheet" id="csss" href="{{ Session::get('dark') ?? asset('assets/css/demo_1/style.min.css') }}" >
   <!-- End layout styles -->
   <link rel="icon" href="{{ asset('assets/images/favicon-32x32.jpg') }}" />
   <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
   <link rel="stylesheet" id="csss" href="{{ asset('assets/css/css.css') }}">
-
+  
 </head>
 
 <body>
@@ -69,7 +69,8 @@ License: You must have a valid license purchased only from above link or https:/
             </a>
           </li>
           <li class="nav-item mw-100">
-            <a class="nav-link" data-toggle="collapse" href="#cultural" role="button" aria-expanded="false" aria-controls="cultural">
+            <a class="nav-link" data-toggle="collapse" href="#cultural" role="button" aria-expanded="false"
+              aria-controls="cultural">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Cultural Encounters</span>
               <i class="link-arrow" data-feather="chevron-down"></i>
@@ -78,19 +79,21 @@ License: You must have a valid license purchased only from above link or https:/
               <ul class="nav sub-menu">
                 @foreach ($categoriesPage as $categoryPage)
                 @if ($categoryPage->category->name == 'Cultural Encounters')
-                  <li class="nav-item">
-                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name_en }}</a>
+                <li class="nav-item">
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{
+                    $categoryPage->name_en }}</a>
                 </li>
                 @endif
-                  
+
                 @endforeach
-                
+
               </ul>
             </div>
           </li>
-          
+
           <li class="nav-item mw-100">
-            <a class="nav-link" data-toggle="collapse" href="#Treks" role="button" aria-expanded="false" aria-controls="Treks">
+            <a class="nav-link" data-toggle="collapse" href="#Treks" role="button" aria-expanded="false"
+              aria-controls="Treks">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Treks & Adventures</span>
               <i class="link-arrow" data-feather="chevron-down"></i>
@@ -99,18 +102,20 @@ License: You must have a valid license purchased only from above link or https:/
               <ul class="nav sub-menu">
                 @foreach ($categoriesPage as $categoryPage)
                 @if ($categoryPage->category->name == 'Treks & Adventures')
-                  <li class="nav-item">
-                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name_en }}</a>
+                <li class="nav-item">
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{
+                    $categoryPage->name_en }}</a>
                 </li>
                 @endif
-                  
+
                 @endforeach
               </ul>
             </div>
           </li>
-          
+
           <li class="nav-item mw-100">
-            <a class="nav-link" data-toggle="collapse" href="#Luxury" role="button" aria-expanded="false" aria-controls="Luxury">
+            <a class="nav-link" data-toggle="collapse" href="#Luxury" role="button" aria-expanded="false"
+              aria-controls="Luxury">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Luxury & MICE</span>
               <i class="link-arrow" data-feather="chevron-down"></i>
@@ -119,18 +124,20 @@ License: You must have a valid license purchased only from above link or https:/
               <ul class="nav sub-menu">
                 @foreach ($categoriesPage as $categoryPage)
                 @if ($categoryPage->category->name == 'Luxury & MICE')
-                  <li class="nav-item">
-                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{ $categoryPage->name_en }}</a>
+                <li class="nav-item">
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link text-lowercase">{{
+                    $categoryPage->name_en }}</a>
                 </li>
                 @endif
-                  
+
                 @endforeach
               </ul>
             </div>
           </li>
-          
+
           <li class="nav-item mw-100">
-            <a class="nav-link" data-toggle="collapse" href="#Wellness" role="button" aria-expanded="false" aria-controls="Wellness">
+            <a class="nav-link" data-toggle="collapse" href="#Wellness" role="button" aria-expanded="false"
+              aria-controls="Wellness">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">Wellness</span>
               <i class="link-arrow" data-feather="chevron-down"></i>
@@ -139,11 +146,12 @@ License: You must have a valid license purchased only from above link or https:/
               <ul class="nav sub-menu">
                 @foreach ($categoriesPage as $categoryPage)
                 @if ($categoryPage->category->name == 'Wellness')
-                  <li class="nav-item ">
-                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}" class="nav-link mw-100 text-lowercase">{{ $categoryPage->name_en }}</a>
+                <li class="nav-item ">
+                  <a href="{{ route('tripsCat', ['slug' => $categoryPage->slug]) }}"
+                    class="nav-link mw-100 text-lowercase">{{ $categoryPage->name_en }}</a>
                 </li>
                 @endif
-                  
+
                 @endforeach
               </ul>
             </div>
@@ -154,9 +162,10 @@ License: You must have a valid license purchased only from above link or https:/
               <span class="link-title">Our social projects</span>
             </a>
           </li>
-          
+
           <li class="nav-item mw-100">
-            <a class="nav-link" data-toggle="collapse" href="#More" role="button" aria-expanded="false" aria-controls="More">
+            <a class="nav-link" data-toggle="collapse" href="#More" role="button" aria-expanded="false"
+              aria-controls="More">
               <i class="link-icon" data-feather="layout"></i>
               <span class="link-title">More</span>
               <i class="link-arrow" data-feather="chevron-down"></i>
@@ -229,14 +238,14 @@ License: You must have a valid license purchased only from above link or https:/
           <div class="form-check form-check-inline">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarLight"
-                value="sidebar-light" onclick="light()" checked>
+                value="sidebar-light" onclick="document.location.href= '{{ route('dark' , ['id' => 'light']) }}'" {{ (Session::get('dark') == asset('assets/css/demo_1/style.min.css') || Session::get('dark') == null) ? 'checked':'' }}>
               Light
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarDark"
-                value="sidebar-dark" onclick="dark()">
+                value="sidebar-dark" onclick="document.location.href= '{{ route('dark' , ['id' => 'dark']) }}'" {{ Session::get('dark') == asset('assets/css/demo_2/style.min.css') ? 'checked':'' }}>
               Dark
             </label>
           </div>
@@ -265,6 +274,7 @@ License: You must have a valid license purchased only from above link or https:/
             </div>
           </form>
           <ul class="navbar-nav">
+            
             <!--<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="flag-icon flag-icon-us mt-1" title="us"></i> <span class="font-weight-medium ml-1 mr-1 d-none d-md-inline-block">English</span>
@@ -631,7 +641,7 @@ License: You must have a valid license purchased only from above link or https:/
   <script src="{{ asset('assets/vendors/dropify/dist/dropify.min.js') }}"></script>
   <script src="{{ asset('assets/vendors/sweetalert2/sweetalert2.min.js') }}"></script>
   <script src="{{ asset('assets/vendors/prismjs/prism.js') }}"></script>
-	<script src="{{ asset('assets/vendors/clipboard/clipboard.min.js') }}"></script>
+  <script src="{{ asset('assets/vendors/clipboard/clipboard.min.js') }}"></script>
   <script src="{{ asset('assets/vendors/jquery-tags-input/jquery.tagsinput.min.js') }}"></script>
   <script src="{{ asset('assets/vendors/select2/select2.min.js') }}"></script>
   <!-- end plugin js for this page -->
@@ -664,18 +674,7 @@ License: You must have a valid license purchased only from above link or https:/
     });
     
   </script>
-  <script>
-    var id = document.getElementById("csss");
-    
-    function dark()
-      { 
-        id.href = "assets/css/demo_2/style.css"; 
-      }
-      function light()
-      { 
-        id.href = "assets/css/demo_1/style.css"; 
-      }
-  </script>
+  
   <script>
     $('#varyingModal').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) // Button that triggered the modal
@@ -687,6 +686,7 @@ License: You must have a valid license purchased only from above link or https:/
       modal.find('.modal-body input').val(recipient)
     })
   </script>
+  
 </body>
 
 </html>

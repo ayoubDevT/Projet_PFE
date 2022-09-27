@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Message as AppMailMessage;
 use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\Mail;
 
 class MessageController extends Controller
 {
@@ -26,7 +29,17 @@ class MessageController extends Controller
             
            
         ]);
+        $mailData = [
+            'subject' => $att['subject'],
+            'name' => $att['name'],
+            'email' => $att['email'],
+            'phone' => $att['phone'],
+            'message' => $att['message'],
+            
+           
+        ];
         
+        Mail::to('yafouzeayoub@gmail.com')->send(new \App\Mail\Message($mailData, $att['email']));
 
         Message::create($att);
         return back();

@@ -14,20 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-    //site de client
-    Route::get('/', [App\Http\Controllers\SiteController::class, 'index'])->name('client.home');
-    Route::get('/home/{lang}', [App\Http\Controllers\SiteController::class, 'indexLang'])->name('client.homeLang');
-    Route::get('/{lang}/about', [App\Http\Controllers\SiteController::class, 'about'])->name('client.about');
-    Route::get('/{lang}/contact', [App\Http\Controllers\SiteController::class, 'contact'])->name('client.contact');
-    Route::get('/{lang}/faqs', [App\Http\Controllers\SiteController::class, 'faqs'])->name('client.faqs');
-    Route::get('/{lang}/general_advices', [App\Http\Controllers\SiteController::class, 'general_a'])->name('client.general_a');
-    Route::get('/{lang}/our_social_projects', [App\Http\Controllers\SiteController::class, 'osp'])->name('client.osp');
-    Route::get('/{lang}/prepare_your_travel_to_morocco', [App\Http\Controllers\SiteController::class, 'prepareTravel'])->name('client.prepareTravel');
-    Route::get('/{lang}/videos', [App\Http\Controllers\SiteController::class, 'videos'])->name('client.videos');
-    Route::get('{lang}/trips/{slug}', [App\Http\Controllers\SiteController::class, 'tripsCat'])->name('client.tripsCat');
-    Route::get('/trip/{lang}/{id}', [App\Http\Controllers\SiteController::class, 'trip'])->name('client.trip');
-    Route::post('/store_booking', [App\Http\Controllers\BookingController::class, 'store'])->name('client.booking.store');
-    Route::post('/store_message', [App\Http\Controllers\MessageController::class, 'store'])->name('client.message.store');
+//site de client
+Route::get('/', [App\Http\Controllers\SiteController::class, 'index'])->name('client.home');
+Route::get('/home/{lang}', [App\Http\Controllers\SiteController::class, 'indexLang'])->name('client.homeLang');
+Route::get('/trans/{lang}', [App\Http\Controllers\SiteController::class, 'trans'])->name('client.trans');
+Route::get('/about/{lang}', [App\Http\Controllers\SiteController::class, 'about'])->name('client.about');
+Route::get('/contact/{lang}', [App\Http\Controllers\SiteController::class, 'contact'])->name('client.contact');
+Route::get('/faqs/{lang}', [App\Http\Controllers\SiteController::class, 'faqs'])->name('client.faqs');
+Route::get('/general_advices/{lang}', [App\Http\Controllers\SiteController::class, 'general_a'])->name('client.general_a');
+Route::get('/our_social_projects/{lang}', [App\Http\Controllers\SiteController::class, 'osp'])->name('client.osp');
+Route::get('/prepare_your_travel_to_morocco/{lang}', [App\Http\Controllers\SiteController::class, 'prepareTravel'])->name('client.prepareTravel');
+Route::get('/videos/{lang}', [App\Http\Controllers\SiteController::class, 'videos'])->name('client.videos');
+Route::get('/trips/{slug}/{lang}', [App\Http\Controllers\SiteController::class, 'tripsCat'])->name('client.tripsCat');
+Route::get('/trip/{lang}/{id}', [App\Http\Controllers\SiteController::class, 'trip'])->name('client.trip');
+Route::post('/store_booking', [App\Http\Controllers\BookingController::class, 'store'])->name('client.booking.store');
+Route::post('/store_message', [App\Http\Controllers\MessageController::class, 'store'])->name('client.message.store');
+Route::get('/page_under_construction', function () {
+    return view('client.underCons');
+})->name('client.undeCon');
 
 //admin
 Route::middleware([
@@ -35,7 +39,17 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    
+
+    Route::get('/dark', function () {
+        if (request()->id == 'light') {
+            session(['dark' => asset('assets/css/demo_1/style.min.css')]);
+        }
+        elseif (request()->id == 'dark') {
+            session(['dark' => asset('assets/css/demo_2/style.min.css') ]);
+        }
+        return back();
+    })->name('dark');
+
     //home
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('store_homeimg/{page}', [App\Http\Controllers\HomeController::class, 'store'])->name('homeimg.store');
@@ -52,7 +66,7 @@ Route::middleware([
 
     //tripCAt
     Route::get('Category/{slug}', [App\Http\Controllers\ImageController::class, 'tripsByCat'])->name('tripsCat');
-    
+
 
     //more
     Route::get('adminPtm', [App\Http\Controllers\ImageController::class, 'ptm'])->name('ptm');
@@ -88,13 +102,13 @@ Route::middleware([
     Route::get('delete_category', [App\Http\Controllers\SubController::class, 'delete'])->name('category.delete');
     Route::get('update_category/{id}', [App\Http\Controllers\SubController::class, 'update'])->name('category.update');
     Route::put('edit_category/{slug}', [App\Http\Controllers\SubController::class, 'edit'])->name('category.edit');
-    
+
     //messages
     Route::get('messages', [App\Http\Controllers\MessageController::class, 'index'])->name('message.index');
 
     //booking
     Route::get('bookings', [App\Http\Controllers\BookingController::class, 'index'])->name('booking.index');
-    
+
     //page ckeditor
     Route::post('ck/upload', [App\Http\Controllers\ckupload::class, 'ckupload'])->name('ck.upload');
     Route::put('ck/page/{page}', [App\Http\Controllers\PageController::class, 'store'])->name('page.store');

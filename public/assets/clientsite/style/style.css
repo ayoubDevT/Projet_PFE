@@ -123,7 +123,7 @@ html {
 
     .excellence {
         width: 100%;
-        height: 600px;
+        height: fit-content;
         background-color: #B6935C;
         text-align: center;
         padding-top: 50px;
@@ -504,7 +504,7 @@ input[type="date"] {
 
 .excellence {
     width: 100%;
-    height: 550px;
+    height: fit-content;
     background-color: #B6935C;
     text-align: center;
     padding-top: 50px;
@@ -528,7 +528,7 @@ input[type="date"] {
 
 .itlabspro-category {
     width: 100%;
-    height: 750px;
+    height: fit-content;
 
     text-align: center;
     padding-top: 100px;
@@ -582,9 +582,10 @@ input[type="date"] {
 
 .itlabspro-testimonials {
     width: 100%;
-    height: 600px;
+    height: fit-content;
     text-align: center;
     background-color: #ffffff;
+    padding-bottom: 50px;
 }
 
 .itlabspro-testimonials-div {
@@ -625,8 +626,9 @@ input[type="date"] {
 
 .itlabspro-about {
     width: 100%;
-    height: 650px;
+    height: fit-content;
     background-color: #B6935C;
+    padding-bottom: 80px;
 }
 
 .about-div1 {
@@ -718,9 +720,10 @@ select.form-control {
 
 .itlabspro-blog {
     width: 100%;
-    height: 800px;
+    height: fit-content;
     background-color: #ffffff;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .blog-div {
