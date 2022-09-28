@@ -14,13 +14,14 @@ class SiteController extends Controller
     public function index()
     {   
         $lang = request()->session()->get('lang') ?? 'en';
+        session(['lang' => $lang]);
         
         return redirect(route('client.homeLang', ['lang'=>$lang]));
     }
 
     public function indexLang($lang)
     {   
-                
+        
         $page = Page::where('slug','home')->first();
         $images = Image::where('page_id' , $page->id)->get();
         $trips = Trip::where('show', 1)->get();
