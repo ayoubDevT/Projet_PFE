@@ -784,3 +784,111 @@ select.form-control {
 .svg-filter{
     filter: invert(63%) sepia(21%) saturate(786%) hue-rotate(358deg) brightness(92%) contrast(90%);
 }
+
+@media screen and (max-width: 900px) {
+    .itlabspro-top {
+        width: 100% !important;
+        margin: auto;
+        padding-top: 10px;
+    }
+    .justweb
+    {
+      display: none !important;
+    }
+    .itlogotop
+    {
+      text-align: center;;
+      padding: 0 !important;
+    }
+    .itthemenu
+    {
+      margin:20px 0px !important;
+      padding: 0 !important;
+    }
+  
+    .itthemenu ul
+    {
+      padding:0;
+      margin:0;
+      text-align: center;
+      display: block !important;
+      padding: 0 !important;
+    }
+  
+    .itthemenu ul li
+    {
+      display: block !important;
+      padding: 0 !important;
+    }
+    .fade-ani
+    {
+      opacity: 1 !important;
+      left:0 !important;
+      right:0 !important;
+      top:0 !important;
+      bottom:0 !important;
+    }
+    .itchoice
+    {
+      height: auto !important;
+    }
+    .itlabspro-position
+    {
+      bottom: 130px;
+    }
+    .itlabspro-position
+    {
+      display: none;
+    }
+    .demo-inner-content
+    {
+      height: auto !important;
+      background: rgba(255,255,255,.4);
+    }
+    .itthecontainer
+    {
+      width: 100% !important;
+    }
+    .itthecontainerh
+    {
+      height: auto !important;
+    }
+    .excellence
+    {
+      height: auto !important;
+    }
+    .itlabspro-category
+    {
+      height: auto !important;
+    }
+    .cat-cards {
+        height: 290px;
+        width: 200px;
+        margin: 20px auto 0pc auto;
+        padding-top: 40px;
+        text-align: center;
+        background-color: #ffffff;
+    }
+    .testi-cards {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 10px 16px 0 rgba(81, 79, 79, 0.19), 0 6px 20px 0 rgba(81, 79, 79, 0.19) !important;
+    }
+    .ittheimgabout
+    {
+      margin: 50px auto 50px auto !important;
+    }
+    .blog-p
+    {
+      width: 100% !important;
+    }
+    .itlabspro-col2
+    {
+      width: 100% !important;
+    }
+  
+  }
+
+.fade-ani{transition:all ease-out .5s 0s;overflow:hidden}.fade-ani{transition:all ease-out .5s 0s}h2{transition:all ease-out .5s 0s}.fade-ani{transition:all ease-out .5s 0s}.fade-ani{transition:all ease-out .5s 0s}.fade-ani{transition:all ease-out .5s 0s}.fade-ani{transition:all ease-out .5s 0s}.fade-ani{opacity:0;position:relative;}.fade-up{bottom:-50px;}.fade-down{top:-50px;}.fade-left{left:-50px;}.fade-right{right:-50px;}.fade-ani.showing{}.fade-in.showing{opacity:1;}.fade-up.showing{bottom:0px;opacity:1;}.fade-down.showing{top:-0px;opacity:1;}.fade-left.showing{left:-0px;opacity:1;}.fade-right.showing{right:-0px;opacity:1;}
+.fade-ani.showingg{}.fade-in.showingg{opacity:1;}.fade-up.showingg{bottom:0px;opacity:1;}.fade-down.showingg{top:-0px;opacity:1;}.fade-left.showingg{left:-0px;opacity:1;}.fade-right.showingg{right:-0px;opacity:1;}

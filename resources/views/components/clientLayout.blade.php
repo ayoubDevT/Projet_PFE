@@ -28,6 +28,26 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
+    <script>
+        
+        $(function(){
+          $(window).scroll( function(){
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            //fade-in
+            $('.fade-ani').each(function(){
+              var bottom_of_object = $(this).position().top + $(this).outerHeight();
+               if( bottom_of_window > bottom_of_object ){
+                $(this).addClass('showing');
+              }
+              else{
+                $(this).removeClass('showing');
+              }
+            });
+
+          });
+        });
+      
+    </script>
 
 </body>
 
