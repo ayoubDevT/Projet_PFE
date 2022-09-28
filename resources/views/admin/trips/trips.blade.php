@@ -132,7 +132,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="myDropify">Thumbnail</label>
+                                <label for="myDropify">Thumbnail min(1200x400)</label>
                                 <input name="thumbnail" type="file" id="myDropify" class="border" />
                                 @error('thumbnail')
                                 <p class="text-red-500 text-xs ml-1">{{ $message }}</p>
