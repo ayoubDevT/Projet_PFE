@@ -4,7 +4,7 @@
       <div class="col-md-12 stretch-card">
         <div class="card">
           <div class="card-body">
-            <h6 class="card-title">Ajouter une image a votre slider min(1200x400)</h6>
+            <h6 class="card-title">Ajouter une image a votre slider min(1200x600)</h6>
             <form action="{{ route('aboutimg.store', ['page'=>$page->id]) }}" method="post"
               enctype="multipart/form-data">
               @csrf

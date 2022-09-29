@@ -6,7 +6,7 @@
             @if (Session::get('lang') == 'en')
             <div>
                 <div id="demo-about"
-                    style="background-image: url('{{ asset(is_null($image) ? 'storage/': 'storage/' . $image->path) }}'); background-size: cover;">
+                    style="background-image: url('{{ asset(is_null($image) ? 'storage/': 'storage/' . $image->path) }}'); background-size: cover;background-position: center;">
                     <div class="itlabspro-position-about">
                         <div class="demo-inner-about">
                             <h1 class="text-uppercase" id="about">{{ $sub->name_en }}</h1>
@@ -56,7 +56,7 @@
         @if (Session::get('lang') == 'de')
         <div>
             <div id="demo-about"
-                style="background-image: url('{{ asset(is_null($image) ? 'storage/': 'storage/' . $image->path) }}'); background-size: cover;">
+                style="background-image: url('{{ asset(is_null($image) ? 'storage/': 'storage/' . $image->path) }}'); background-size: cover;background-position: center;">
                 <div class="itlabspro-position-about">
                     <div class="demo-inner-about">
                         <h1 class="text-uppercase" id="about">{{ $sub->name_de }}</h1>
@@ -105,7 +105,7 @@
         @if (Session::get('lang') == 'fr')
         <div>
             <div id="demo-about"
-                style="background-image: url('{{ asset(is_null($image) ? 'storage/': 'storage/' . $image->path) }}'); background-size: cover;">
+                style="background-image: url('{{ asset(is_null($image) ? 'storage/': 'storage/' . $image->path) }}'); background-size: cover;background-position: center;">
                 <div class="itlabspro-position-about">
                     <div class="demo-inner-about">
                         <h1 class="text-uppercase" id="about">{{ $sub->name_fr }}</h1>

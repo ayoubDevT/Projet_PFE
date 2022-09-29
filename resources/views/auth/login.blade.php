@@ -54,7 +54,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="mt-3">
+                                            <!--<div class="mt-3">
                                                 @if (Route::has('password.request'))
                                                 <a class="underline text-sm text-gray-600 hover:text-gray-900"
                                                     href="{{ route('password.request') }}">
@@ -64,7 +64,7 @@
                                                 @endif
                                             </div>
                                             <a href="register.html" class="d-block mt-3 text-muted">Not a user? Sign
-                                                up</a>
+                                                up</a>-->
                                         </form>
                                     </div>
                                 </div>

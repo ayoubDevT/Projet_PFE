@@ -147,7 +147,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="myDropify">Thumbnail min(1200x400)</label><br>
+                                <label for="myDropify">Thumbnail min(1200x600)</label><br>
                                 <label for="old">Ancienne image</label>
                                 <img src="{{ asset('storage/'.$trip->thumbnail) }}" id="old" alt="old image"
                                     width="400px" class="mb-4">

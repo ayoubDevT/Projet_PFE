@@ -62,7 +62,7 @@ html {
 }
 
 .itlabspro-container-about {
-    height: 400px;
+    height: 600px;
     width: 100%;
     position: relative;
 
@@ -329,7 +329,7 @@ input[type="date"] {
     overflow: hidden;
     /* to bound the empty top space created by inner element's top margin */
     width: 100%;
-    height: 400px;
+    height: 600px;
     top: 0;
     background-color: #999;
 

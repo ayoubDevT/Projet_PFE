@@ -6,7 +6,7 @@
             @if (Session::get('lang') == 'en')
             <div>
                 <div id="demo-about"
-                    style="background-image: url('{{ asset('storage/'.$trip->thumbnail) }}'); background-size: cover;">
+                    style="background-image: url('{{ asset('storage/'.$trip->thumbnail) }}'); background-size: cover;background-position: center;">
                     <div class="itlabspro-position-about">
                         <div class="demo-inner-about">
                             <h1 class="text-uppercase" id="about">{{ $trip->title_en }}</h1>
@@ -142,7 +142,7 @@
         @if (Session::get('lang') == 'de')
         <div>
             <div id="demo-about"
-                style="background-image: url('{{ asset('storage/'.$trip->thumbnail) }}'); background-size: cover;">
+                style="background-image: url('{{ asset('storage/'.$trip->thumbnail) }}'); background-size: cover;background-position: center;">
                 <div class="itlabspro-position-about">
                     <div class="demo-inner-about">
                         <h1 class="text-uppercase" id="about">{{ $trip->title_de }}</h1>
@@ -278,7 +278,7 @@
         @if (Session::get('lang') == 'fr')
         <div>
             <div id="demo-about"
-                style="background-image: url('{{ asset('storage/'.$trip->thumbnail) }}'); background-size: cover;">
+                style="background-image: url('{{ asset('storage/'.$trip->thumbnail) }}'); background-size: cover;background-position: center;">
                 <div class="itlabspro-position-about">
                     <div class="demo-inner-about">
                         <h1 class="text-uppercase" id="about">{{ $trip->title_fr }}</h1>
