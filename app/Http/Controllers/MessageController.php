@@ -44,4 +44,14 @@ class MessageController extends Controller
         Message::create($att);
         return back();
     }
+
+    public function delete()
+    {
+
+        $message = Message::find(request()->id);
+        
+        $message->delete();
+        
+        return back();
+    }
 }

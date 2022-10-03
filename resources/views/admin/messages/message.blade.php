@@ -32,6 +32,8 @@
                                                 data-toggle="modal" data-target="#exampleModal{{ $message->id }}">
                                                 Details
                                             </button>
+                                            <a class="btn btn-danger btn-icon-text mb-2  mt-2"
+                                                href="{{ route('message.delete', ['id'=>$message->id]) }}">Supprimer</a>
                                         </td>
 
                                     </tr>

@@ -105,9 +105,11 @@ Route::middleware([
 
     //messages
     Route::get('messages', [App\Http\Controllers\MessageController::class, 'index'])->name('message.index');
+    Route::get('delete_message', [App\Http\Controllers\MessageController::class, 'delete'])->name('message.delete');
 
     //booking
     Route::get('bookings', [App\Http\Controllers\BookingController::class, 'index'])->name('booking.index');
+    Route::get('delete_booking', [App\Http\Controllers\BookingController::class, 'delete'])->name('booking.delete');
 
     //page ckeditor
     Route::post('ck/upload', [App\Http\Controllers\ckupload::class, 'ckupload'])->name('ck.upload');

@@ -52,5 +52,15 @@ class BookingController extends Controller
         Booking::create($att);
         return back();
     }
+
+    public function delete()
+    {
+
+        $booking = Booking::find(request()->id);
+        
+        $booking->delete();
+        
+        return back();
+    }
 }
 
